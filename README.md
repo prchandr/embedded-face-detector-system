@@ -8,4 +8,4 @@ Download the images by navigating to the project directory and running the
 ```
 idxupdate project-dataset
 ```
-on the DICE command line.
+on the DICE command line, or simply running the **`setupDataset.sh`** script.
