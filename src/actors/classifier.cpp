@@ -32,12 +32,10 @@ bool classifier::enable() {
         case CLASSIFIER_MODE_CLASSIFY:
             break;
 
-
         case CLASSIFIER_MODE_FALSE:
             result = (welt_c_fifo_population(abort_out) 
                 < welt_c_fifo_capacity(abort_out));
             break;
-
 
         case CLASSIFIER_MODE_TRUE:
             result = (welt_c_fifo_population(continue_out) 
