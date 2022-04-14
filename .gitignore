@@ -33,3 +33,6 @@
 
 # Dataset of Images
 project-dataset/
+
+# Build directorys
+**/build/
