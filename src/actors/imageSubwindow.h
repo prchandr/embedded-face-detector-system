@@ -3,7 +3,7 @@
 
 #include <vector>
 
-struct ImageSubWindow {
+struct ImageSubwindow {
 	vector<vector<int>> *image;
 	int startRow, startCol;
 	int windowWidth, windowHeight;

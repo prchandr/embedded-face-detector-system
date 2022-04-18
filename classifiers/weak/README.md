@@ -1,5 +1,5 @@
 ## Weak Classifiers Files
-This directory holds the files describing each weak classifier. The name of the file should be `weak_XX.txt`, where XX is the 2 digit index starting at 00.
+This directory holds the files describing each weak classifier. The name of the file should be `weak_XX.txt`, where XX is the index starting at 0.
 
 The format of the file is as shown below.
 ```
@@ -46,7 +46,7 @@ Both the feature dimensions and the start coordinates must allow the entire feat
 
 The <parity> and <threshold> values default to 1 and 0.5, respectively, until the classifier is properly trained on the training set. 
 
-e.g. 
+e.g. wc_1.txt
 
 0 6 2
 5 5
