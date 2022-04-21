@@ -61,6 +61,26 @@ void classifier::invoke() {
             break;
         }
         case CLASSIFIER_MODE_CLASSIFY: {
+			// Integrate image
+
+			weightedSum = 0;
+			// Go through list of weak classifiers, perform classification
+			/* for classifier in classifiers
+				isFace = classifer.classify(integral_image)
+				weightedSum += isFace * weight[i]
+
+			// Do Final Classifier evaluation using weights.
+
+			*/
+
+
+
+
+
+
+
+
+
             /* Runs VJ on subwindow input */
             /* integrate image */
             int i,j,m,n;

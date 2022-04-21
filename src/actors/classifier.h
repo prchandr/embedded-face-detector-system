@@ -12,6 +12,7 @@ extern "C" {
 
 #include "welt_cpp_actor.h"
 #include "welt_cpp_graph.h"
+#include "weakClassifier.h"
 
 #include <vector>
 
@@ -34,8 +35,8 @@ is rejected, it is transitioned to false. Otherwise, it is transitioned to true.
 False - Does not consume any tokens. Produces a copy of the token that was read
 in on the output abort_port. Transitions to read.
 
-True - Does not consume any tokens. Produces a copy of the token that was read
 in on the output continue_port. Transitions to read.
+True - Does not consume any tokens. Produces a copy of the token that was read
 
 *******************************************************************************/
 #define CLASSIFIER_MODE_CONFIGURE   1
@@ -52,7 +53,8 @@ public:
     ~classifier() override;
 
     bool enable() override;
-    void invoke() override;
+   
+	void invoke() override;
 
     void reset() override;
 
@@ -60,7 +62,7 @@ public:
 
 private:
     /* Inner parameters */
-    vector<vector<vector<int>>> features;
+    vector<WeakClassifier> classifiers;
     vector<float> weights;
 
     /* FIFO pointers */
