@@ -15,7 +15,7 @@ enum featureType {
 
 /*
 This class represents a weak classifier. It uses a feature, 
-threshold, and parity to classify an image as a face or
+threshold, and polarity to classify an image as a face or
 non-face.
 */
 
@@ -23,7 +23,7 @@ class WeakClassifier {
 public:
 	WeakClassifier(featureType feature, int width, int height,
 				int startRow, int startCol,
-				int parity, float threshold);
+				int polarity, float threshold);
 
 	//static vector<vector<int>> integrateImage(ImageSubwindow image);
 
@@ -36,20 +36,20 @@ public:
 	int getRowStart();
 	int getColStart();
 	float getThreshold();
-	int getParity();
+	int getPolarity();
 
 	// Setters for private variables
 	void setFeatureType(featureType feature);
 	void setDimensions(int width, int height);
 	void setStartCoord(int startRow, int startCol);
-	void setClassifyParams(int parity, float threshold);
+	void setClassifyParams(int polarity, float threshold);
 
 private:
 	featureType feature;
 	int width, height;
 	int startRow, startCol;
 	float threshold;
-	int parity;
+	int polarity;
 }
 
 #endif
