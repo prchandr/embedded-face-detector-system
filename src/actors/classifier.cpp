@@ -1,5 +1,7 @@
 #include <iostream>
 #include "classifier.h"
+#include "weakClassifier.h"
+#include "integrateImage.h"
 
 #define MAX_FIFO_COUNT 3
 
@@ -53,94 +55,49 @@ void classifier::invoke() {
     switch (mode) {
         case CLASSIFIER_MODE_CONFIGURE: {
             /* Configures actor with specific features and weights */
-            break;
+	       break;
         }
         case CLASSIFIER_MODE_READ: {
             /* Reads in pointer to image subwindow*/
+	       ImageSubwindow *W = nullptr;
+	       welt_c_fifo_read(input_port, &W);
 
-            break;
+	       if (integralImage == nullptr)
+		 mode = CLASSIFIER_MODE_FALSE;
+	       else
+		 mode = CLASSIFIER_MODE_CLASSIFY;
+
+	       break;
+
         }
         case CLASSIFIER_MODE_CLASSIFY: {
-			// Integrate image
+	      // Do Final Classifier Evaluation using weights
+	         weightedSum = 0.0;
+		 float isFace;
+		 for (int i = 0; i < classifiers.size(); i++) {
+		   isFace = classifiers[i].classifyImage(W) ? 1.0 : 0.0; // 1 if true, 0 if false
+		   weightedSum += isFace + weights[i]; 
+		 }
 
-			weightedSum = 0;
-			// Go through list of weak classifiers, perform classification
-			/* for classifier in classifiers
-				isFace = classifer.classify(integral_image)
-				weightedSum += isFace * weight[i]
-
-			// Do Final Classifier evaluation using weights.
-
-			*/
-
-
-
-
-
-
-
-
-
-            /* Runs VJ on subwindow input */
-            /* integrate image */
-            int i,j,m,n;
-            for(i=0;i<24; i++)
-            {
-                for(j=1;j<24; j++)
-                {
-                    //image vector is vector<vector <int>> *img.
-                    if(i==0)
-                        img[i][j] += img[i][j-1];
-                    else if(j==0)
-                        img[i][j] += img[i-1][j]
-                    else
-                        img[i][j] += img[i-1][j]+img[i][j-1]-img[i-1][j-1];
-                }
-            }
-
-            /* 1 Rectangular Features*/
-            float weight=1/m;
-            int neg, pos;
-            vector<bool> label;
-            vector<int> sample;
-            //vector<int> weight;
-            /* 1~24 in column, 1~24 in row. -> 24*24 size*/
-            for(m=1; m<25 ; m++) //m,n are row and column of harr features.
-            {
-                for(n=2; n<25; n += 2)
-                {
-                    for(i=0;i<24-n+1; i++)
-                    {
-                        for(j=0;j<24-m+1; j++)
-                        {
-                            /* only for face samples*/
-                            if(i-1<0 && j-1>0)
-                            {
-                                pos = img[i+n-1][j+m-1] + img[i+n/2-1][j-1] - img[i+n/2-1][j-m-1] - img[i+n-1][j-1];
-                                neg = img[i+n/2-1][j+m-1] - img[i+n/2-1][j-1] - img[i-1][j+m-1];
-                            }
-                            pos = img[i+n-1][j+m-1] + img[i+n/2-1][j-1] - img[i+n/2-1][j-m-1] - img[i+n-1][j-1];
-                            neg = img[i+n/2-1][j+m-1] + img[i-1][j-1] - img[i+n/2-1][j-1] - img[i-1][j+m-1];
-                            
-                            if(pos-neg > threshold)
-                                label.pushback(true);
-                            else
-                                label.pushback(false);
-                            weight.pushback
-                            
-                        }
-                    }
-                }
-            }
-            
-            break;
+		 if (weightedSum == 0.0)
+		   mode = CLASSIFIER_MODE_FALSE;
+		 else
+		   mode = CLASSIFIER_MODE_TRUE;
+		 
+                 break;
         }
         case CLASSIFIER_MODE_FALSE: {
             /* Write copy of subwindow input to abort */
-            break;
+	        welt_c_fifo_write(abort_port, &(W));
+		mode = CLASSIFIER_MODE_READ;
+		
+                break;
         }
         case CLASSIFIER_MODE_TRUE: {
             /* Write copy of subwindow input to continue */
+	       welt_c_fifo_write(continue_port, &(W));
+	       mode = CLASSIFIER_MODE_READ;
+	       
             break;
         }
 
