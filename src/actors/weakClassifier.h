@@ -1,7 +1,6 @@
 #ifndef weak_classifier_h
 #define weak_classifier_h
 
-#include <vector>
 #include <stdio.h>
 
 // Define Types of Features
@@ -25,9 +24,7 @@ public:
 				int startRow, int startCol,
 				int polarity, float threshold);
 
-	//static vector<vector<int>> integrateImage(ImageSubwindow image);
-
-	bool classifyImage(ImageSubwindow image);
+	bool classifyImage(ImageSubwindow integralImage);
 
 	// Getters for private variables
 	featureType getFeatureType();

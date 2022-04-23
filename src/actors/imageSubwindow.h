@@ -6,7 +6,6 @@
 struct ImageSubwindow {
 	vector<vector<int>> *image;
 	int startRow, startCol;
-	int windowWidth, windowHeight;
 };
 
 
