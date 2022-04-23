@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <iostream>
 #include <fstream>
 #include <string>
 #include "../../src/graph/efds_graph.h"
@@ -8,15 +6,18 @@ using namespace std;
 
 int main(int argc, char **argv) {
     int i = 0;
-    int arg_count = ; /* driver  */
+    int arg_count = 6; /* driver classifierDirectory classifierSelect imageDirectory imageSelect outputFile */
 
     /* Check program usage. */
     if (argc != arg_count) {
-        fprintf(stderr, "efds_graph_driver.exe error: arg count\n");
+		cerr << "efds_graph_driver.exe error: arg count invalid\n";
+        return 1;
     }
 
     /* Open the input and output file(s). */
     i = 1;
+
+
 
     auto* efds_graph = new efds_graph();
     /* Execute the graph. */

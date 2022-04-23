@@ -1,5 +1,6 @@
 #include "weakClassifier.h"
 
+using namespace std;
 
 weakClassifier::weakClassifier(featureType feature, int width, int height,
 				int startRow, int startCol,
@@ -222,9 +223,10 @@ bool weakClassifier::classifyImage(ImageSubwindow integral_image){
 			break;
 	}
 	
-	if(polarity*pos-neg > polarity*threshold)
-		return true;
-	else
-		return false;
+	return (polarity * (pos-neg) > polarity*threshold);
 }
 
+istream &read(istream &input, WeakClassifier &classifier) {
+	input >> classifier.featureType >> classifier.width >> classifier.height >> classifier.startRow >> classifier.startCol >> classifier.parity >> classifier.threshold;
+	return input;
+}

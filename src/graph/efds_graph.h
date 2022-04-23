@@ -12,7 +12,6 @@ extern "C" {
 #include "welt_cpp_graph.h"
 #include "welt_cpp_util.h"
 
-
 #define BUFFER_CAPACITY 1024
 #define MAX_CLASSIFIERS 32
 
