@@ -1,5 +1,7 @@
 #include <iostream>
 #include "classifier.h"
+#include "weakClassifier.h"
+#include "integrateImage.h"
 
 #define MAX_FIFO_COUNT 3
 
@@ -55,14 +57,23 @@ void classifier::invoke() {
     switch (mode) {
         case CLASSIFIER_MODE_CONFIGURE: {
             /* Configures actor with specific features and weights */
-            break;
+	       break;
         }
         case CLASSIFIER_MODE_READ: {
             /* Reads in pointer to image subwindow*/
+	       ImageSubwindow *W = nullptr;
+	       welt_c_fifo_read(input_port, &W);
 
-            break;
+	       if (integralImage == nullptr)
+		 mode = CLASSIFIER_MODE_FALSE;
+	       else
+		 mode = CLASSIFIER_MODE_CLASSIFY;
+
+	       break;
+
         }
         case CLASSIFIER_MODE_CLASSIFY: {
+
             /* Runs VJ on subwindow input */
             /* 1 Rectangular Features*/
 
@@ -82,13 +93,34 @@ void classifier::invoke() {
             }
 			
             break;
+
+	      // Do Final Classifier Evaluation using weights
+	         weightedSum = 0.0;
+		 float isFace;
+		 for (int i = 0; i < classifiers.size(); i++) {
+		   isFace = classifiers[i].classifyImage(W) ? 1.0 : 0.0; // 1 if true, 0 if false
+		   weightedSum += isFace + weights[i]; 
+		 }
+
+		 if (weightedSum == 0.0)
+		   mode = CLASSIFIER_MODE_FALSE;
+		 else
+		   mode = CLASSIFIER_MODE_TRUE;
+		 
+                 break;
         }
         case CLASSIFIER_MODE_FALSE: {
             /* Write copy of subwindow input to abort */
-            break;
+	        welt_c_fifo_write(abort_port, &(W));
+		mode = CLASSIFIER_MODE_READ;
+		
+                break;
         }
         case CLASSIFIER_MODE_TRUE: {
             /* Write copy of subwindow input to continue */
+	       welt_c_fifo_write(continue_port, &(W));
+	       mode = CLASSIFIER_MODE_READ;
+	       
             break;
         }
 
