@@ -35,7 +35,6 @@ is rejected, it is transitioned to false. Otherwise, it is transitioned to true.
 False - Does not consume any tokens. Produces a copy of the token that was read
 in on the output abort_port. Transitions to read.
 
-in on the output continue_port. Transitions to read.
 True - Does not consume any tokens. Produces a copy of the token that was read
 
 *******************************************************************************/
