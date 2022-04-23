@@ -47,10 +47,10 @@ Both the feature dimensions and the start coordinates must allow the entire feat
 The <parity> and <threshold> values default to 1 and 0.5, respectively, until the classifier is properly trained on the training set. 
 
 e.g. wc_1.txt
-
+```
 0 6 2
 5 5
 1 0.5
-
+```
 
 
