@@ -62,6 +62,7 @@ public:
 
 private:
     /* Inner parameters */
+
     vector<WeakClassifier> classifiers;
     vector<float> weights;
 

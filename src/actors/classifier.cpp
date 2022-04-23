@@ -32,10 +32,12 @@ bool classifier::enable() {
         case CLASSIFIER_MODE_CLASSIFY:
             break;
 
+
         case CLASSIFIER_MODE_FALSE:
             result = (welt_c_fifo_population(abort_out) 
                 < welt_c_fifo_capacity(abort_out));
             break;
+
 
         case CLASSIFIER_MODE_TRUE:
             result = (welt_c_fifo_population(continue_out) 
@@ -61,78 +63,24 @@ void classifier::invoke() {
             break;
         }
         case CLASSIFIER_MODE_CLASSIFY: {
-			// Integrate image
-
-			weightedSum = 0;
-			// Go through list of weak classifiers, perform classification
-			/* for classifier in classifiers
-				isFace = classifer.classify(integral_image)
-				weightedSum += isFace * weight[i]
-
-			// Do Final Classifier evaluation using weights.
-
-			*/
-
-
-
-
-
-
-
-
-
             /* Runs VJ on subwindow input */
-            /* integrate image */
-            int i,j,m,n;
-            for(i=0;i<24; i++)
-            {
-                for(j=1;j<24; j++)
-                {
-                    //image vector is vector<vector <int>> *img.
-                    if(i==0)
-                        img[i][j] += img[i][j-1];
-                    else if(j==0)
-                        img[i][j] += img[i-1][j]
-                    else
-                        img[i][j] += img[i-1][j]+img[i][j-1]-img[i-1][j-1];
-                }
-            }
-
             /* 1 Rectangular Features*/
-            float weight=1/m;
-            int neg, pos;
-            vector<bool> label;
-            vector<int> sample;
-            //vector<int> weight;
-            /* 1~24 in column, 1~24 in row. -> 24*24 size*/
-            for(m=1; m<25 ; m++) //m,n are row and column of harr features.
+
+			
+            /* weight update process for face training*/
+            for(i=0; i<samplenum; i++)
             {
-                for(n=2; n<25; n += 2)
+                if(label[i] == true)
                 {
-                    for(i=0;i<24-n+1; i++)
-                    {
-                        for(j=0;j<24-m+1; j++)
-                        {
-                            /* only for face samples*/
-                            if(i-1<0 && j-1>0)
-                            {
-                                pos = img[i+n-1][j+m-1] + img[i+n/2-1][j-1] - img[i+n/2-1][j-m-1] - img[i+n-1][j-1];
-                                neg = img[i+n/2-1][j+m-1] - img[i+n/2-1][j-1] - img[i-1][j+m-1];
-                            }
-                            pos = img[i+n-1][j+m-1] + img[i+n/2-1][j-1] - img[i+n/2-1][j-m-1] - img[i+n-1][j-1];
-                            neg = img[i+n/2-1][j+m-1] + img[i-1][j-1] - img[i+n/2-1][j-1] - img[i-1][j+m-1];
-                            
-                            if(pos-neg > threshold)
-                                label.pushback(true);
-                            else
-                                label.pushback(false);
-                            weight.pushback
-                            
-                        }
-                    }
+                    error += weight[i];
                 }
             }
-            
+			
+            for(i=0; i<samplenum; i++)
+            {
+                weight[i]  = weight[i]*pow((error/(1-error), label[i]); // update the weight
+            }
+			
             break;
         }
         case CLASSIFIER_MODE_FALSE: {
