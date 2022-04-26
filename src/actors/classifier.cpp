@@ -73,13 +73,12 @@ void classifier::invoke() {
 
         }
         case CLASSIFIER_MODE_CLASSIFY: {
-
             /* Runs VJ on subwindow input */
             /* 1 Rectangular Features*/
 
-			
+	    float error = 0.0;
             /* weight update process for face training*/
-            for(i=0; i<samplenum; i++)
+            for(int i=0; i<samplenum; i++)
             {
                 if(label[i] == true)
                 {
@@ -87,27 +86,27 @@ void classifier::invoke() {
                 }
             }
 			
-            for(i=0; i<samplenum; i++)
+            for(int i=0; i<samplenum; i++)
             {
                 weight[i]  = weight[i]*pow((error/(1-error), label[i]); // update the weight
             }
 			
-            break;
+		  //break;
 
-	      // Do Final Classifier Evaluation using weights
-	         weightedSum = 0.0;
-		 float isFace;
-		 for (int i = 0; i < classifiers.size(); i++) {
-		   isFace = classifiers[i].classifyImage(W) ? 1.0 : 0.0; // 1 if true, 0 if false
-		   weightedSum += isFace + weights[i]; 
-		 }
+	    // Do Final Classifier Evaluation using weights
+	    weightedSum = 0.0;
+	    float isFace;
+	    for (int i = 0; i < classifiers.size(); i++) {
+	      isFace = classifiers[i].classifyImage(W) ? 1.0 : 0.0; // 1 if true, 0 if false
+	      weightedSum += isFace + weights[i]; 
+	    }
 
-		 if (weightedSum == 0.0)
-		   mode = CLASSIFIER_MODE_FALSE;
-		 else
-		   mode = CLASSIFIER_MODE_TRUE;
-		 
-                 break;
+	    if (error*weightedSum >= 0.5*weightedSum) // final strong classifier: SUM(alpha_t * h_t) >= 1/2 *(SUM(a_t)), a_t = log(1/beta_t)
+	      mode = CLASSIFIER_MODE_FALSE;
+	    else
+	      mode = CLASSIFIER_MODE_TRUE;
+	    
+	    break;
         }
         case CLASSIFIER_MODE_FALSE: {
             /* Write copy of subwindow input to abort */
