@@ -102,9 +102,9 @@ void classifier::invoke() {
 	    }
 
 	    if (error*weightedSum >= 0.5*weightedSum) // final strong classifier: SUM(alpha_t * h_t) >= 1/2 *(SUM(a_t)), a_t = log(1/beta_t)
-	      mode = CLASSIFIER_MODE_FALSE;
-	    else
 	      mode = CLASSIFIER_MODE_TRUE;
+	    else
+	      mode = CLASSIFIER_MODE_FALSE;
 	    
 	    break;
         }
