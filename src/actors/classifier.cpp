@@ -78,17 +78,14 @@ void classifier::invoke() {
 
 	    float error = 0.0;
             /* weight update process for face training*/
-            for(int i=0; i<samplenum; i++)
-            {
-                if(label[i] == true)
-                {
+            for(int i = 0; i < classifiers.size(); i++) {
+                if(label[i] == true) {
                     error += weight[i];
                 }
             }
 			
-            for(int i=0; i<samplenum; i++)
-            {
-                weight[i]  = weight[i]*pow((error/(1-error), label[i]); // update the weight
+            for(int i = 0; i < classifiers.size(); i++) {
+                weight[i] = weight[i]*pow((error/(1-error), label[i]); // update the weight
             }
 			
 		  //break;
@@ -101,7 +98,7 @@ void classifier::invoke() {
 	      weightedSum += isFace + weights[i]; 
 	    }
 
-	    if (error*weightedSum >= 0.5*weightedSum) // final strong classifier: SUM(alpha_t * h_t) >= 1/2 *(SUM(a_t)), a_t = log(1/beta_t)
+	    if (error*weightedSum >= 0.5*weightedSum) // final strong classifier: SUM(alpha_t * h_t) >= 1/2 *(SUM(alpha_t)), alpha_t = log(1/beta_t)
 	      mode = CLASSIFIER_MODE_TRUE;
 	    else
 	      mode = CLASSIFIER_MODE_FALSE;
