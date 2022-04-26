@@ -15,21 +15,6 @@ efds_graph::efds_graph(string classifierDir, string classifierConfig,
                         string imageDir, string imageConfig,
                         string outputFile) {
     
-    /* Configure classifier actors */
-	ifstream classifierConfigInput(classifierConfig);
-	if (!classifierConfigInput.is_open()) {
-		cerr << "Classifier config file could not be opened.\n";
-		return 1; 
-	}
-
-	int classifierIndex = 0;
-	string strongFileName;
-	while (classifierConfigInput >> classifierIndex) {
-		// Obtain filenames for strong classifier files
-		strongFileName = classifierDir + "sc_" + to_string(classifierIndex) + ".txt";
-		cout << strongFileName << endl;
-	}
-	return;
 
 
     /* Initialize fifos to have a size of a pointer. */

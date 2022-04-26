@@ -12,6 +12,8 @@ extern "C" {
 #include "welt_cpp_graph.h"
 #include "welt_cpp_util.h"
 
+#include "../utils/weakClassifier.h"
+
 #define BUFFER_CAPACITY 1024
 #define MAX_CLASSIFIERS 32
 
@@ -36,7 +38,11 @@ TYPE DEFINITIONS
 
 class efds_graph : public welt_cpp_graph{
 public:
-    efds_graph(string classifierDir, string classifierConfig, string imageDir, string imageConfig, string outputFile);
+    efds_graph(vector<vector<
+
+
+
+string classifierDir, string classifierConfig, string imageDir, string imageConfig, string outputFile);
     ~efds_graph();
 
     /* Scheduler for this graph */
