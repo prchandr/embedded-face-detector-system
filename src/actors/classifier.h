@@ -48,7 +48,7 @@ class classifier : public welt_cpp_actor{
 public:
     classifier(welt_c_fifo_pointer input_in, 
             welt_c_fifo_pointer continue_out,
-            welt_c_fifo_pointer abort_out);
+            vector<WeakClassifier> classifiers, vector<float> weights);
     ~classifier() override;
 
     bool enable() override;
@@ -68,7 +68,6 @@ private:
     /* FIFO pointers */
     welt_c_fifo_pointer input_port;
     welt_c_fifo_pointer continue_port;
-    welt_c_fifo_pointer abort_port;
 };
 
 #endif
