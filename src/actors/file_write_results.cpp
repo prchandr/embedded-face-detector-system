@@ -33,11 +33,18 @@ bool file_write_results::enable() {
 void file_write_results::invoke() {
     switch (mode) {
         case FILE_WRITE_PROCESS: {
-	  
+	    welt_c_fifo_read(input_port, &resultCounter);
+	    if (resultCounter == 0)
+	      outputFileName += "NF\n";
+	    else
+	      outputFileName += "F\n";
+	    outStream << outputFileName << endl;
+	    mode = FILE_WRITE_PROCESS;
             break;
         }
 
         case FILE_WRITE_ERROR: {
+	    /* Remain in the same mode, do nothing */
 	    mode = FILE_WRITE_ERROR;
             break;
         }
