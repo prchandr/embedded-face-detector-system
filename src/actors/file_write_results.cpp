@@ -5,10 +5,8 @@
 
 using namespace std;
 
-file_write_results::file_write_results(welt_c_fifo_pointer input_in, 
-            welt_c_fifo_pointer continue_out) {
+file_write_results::file_write_results(welt_c_fifo_pointer input_in, string output_filename) {
     this->input_port = input_in;
-    this->continue_port = continue_out;
 
     this->actor_set_max_port_count(MAX_FIFO_COUNT);
     this->mode = CLASSIFIER_MODE_CONFIGURE;
