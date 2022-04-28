@@ -38,11 +38,10 @@ TYPE DEFINITIONS
 
 class efds_graph : public welt_cpp_graph{
 public:
-    efds_graph(vector<vector<
+    efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector<float>> weights, 
+        string imageDir, vector<int> imageIndices, 
+        string output);
 
-
-
-string classifierDir, string classifierConfig, string imageDir, string imageConfig, string outputFile);
     ~efds_graph();
 
     /* Scheduler for this graph */

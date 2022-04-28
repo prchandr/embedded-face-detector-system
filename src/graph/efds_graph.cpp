@@ -11,12 +11,9 @@
 using namespace std;
 
 // constructor
-efds_graph::efds_graph(string classifierDir, string classifierConfig,
-                        string imageDir, string imageConfig,
-                        string outputFile) {
-    
-
-
+efds_graph::efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector<float>> weights, 
+        string imageDir, vector<int> imageIndices, 
+        string output) {
     /* Initialize fifos to have a size of a pointer. */
     int token_size = sizeof(imageSubwindow *image);
 
