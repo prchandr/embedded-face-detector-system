@@ -49,7 +49,4 @@ private:
 	int polarity;
 }
 
-// Non-member interface functions
-std::istream &read(std::istream &input, WeakClassifier &classifier);
-
 #endif

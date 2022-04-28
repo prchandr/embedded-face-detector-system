@@ -226,7 +226,3 @@ bool weakClassifier::classifyImage(ImageSubwindow integral_image){
 	return (polarity * (pos-neg) > polarity*threshold);
 }
 
-istream &read(istream &input, WeakClassifier &classifier) {
-	input >> classifier.featureType >> classifier.width >> classifier.height >> classifier.startRow >> classifier.startCol >> classifier.polarity >> classifier.threshold;
-	return input;
-}
