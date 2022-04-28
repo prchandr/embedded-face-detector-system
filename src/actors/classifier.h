@@ -12,7 +12,8 @@ extern "C" {
 
 #include "welt_cpp_actor.h"
 #include "welt_cpp_graph.h"
-#include "weakClassifier.h"
+
+#include "../utils/weakClassifier.h"
 
 #include <vector>
 
@@ -30,12 +31,11 @@ classify, otherwise it is transitioned to false.
 
 Classify - Operates on the image subwindow W in the token consumed in the 
 previous firing. VJ algorithm is used to determine whether W has a face. If W 
-is rejected, it is transitioned to false. Otherwise, it is transitioned to true. 
+is rejected, it is transitioned to false. Otherwise, it is transitioned to true
 
-False - Does not consume any tokens. Produces a copy of the token that was read
-in on the output abort_port. Transitions to read.
+False - Does not consume any tokens. Produces a null pointer token.
 
-True - Does not consume any tokens. Produces a copy of the token that was read
+True - Does not consume any tokens. Produces a copy of the PTIS token.
 
 *******************************************************************************/
 #define CLASSIFIER_MODE_CONFIGURE   1
@@ -61,7 +61,6 @@ public:
 
 private:
     /* Inner parameters */
-
     vector<WeakClassifier> classifiers;
     vector<float> weights;
 
