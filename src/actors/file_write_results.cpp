@@ -35,14 +35,17 @@ bool file_write_results::enable() {
 void file_write_results::invoke() {
     switch (mode) {
         case FILE_WRITE_PROCESS: {
+	  
             break;
         }
 
         case FILE_WRITE_ERROR: {
+	    mode = FILE_WRITE_ERROR;
             break;
         }
 
         default:
+	    mode = FILE_WRITE_ERROR:
             break;
     }
 }
