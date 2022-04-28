@@ -63,6 +63,7 @@ private:
     /* Inner parameters */
     vector<WeakClassifier> classifiers;
     vector<float> weights;
+    ImageSubwindow *image;
 
     /* FIFO pointers */
     welt_c_fifo_pointer input_port;
