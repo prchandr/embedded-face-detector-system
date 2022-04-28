@@ -4,6 +4,7 @@
 #include "../actors/classifier.h"
 #include "../actors/imageSubwindow.h"
 #include "../actors/integrateImage.h"
+#include "../actors/file_write_results.h"
 
 #include <string>
 #include <fstream>
@@ -14,6 +15,7 @@ using namespace std;
 efds_graph::efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector<float>> weights, 
         string imageDir, vector<int> imageIndices, 
         string output) {
+
     /* Initialize fifos to have a size of a pointer. */
     int token_size = sizeof(imageSubwindow *image);
 
@@ -26,10 +28,11 @@ efds_graph::efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector
     Create actors in the actors vector and put descriptions
     for each actor in the descriptions vector.
     ***************************************************************************/
-	actors.push_back(new txt_img_read(fifos[FIFO_TIR_CLAS], in_img_file, numRows, numCols, 0));
+	txt_img_read imageRead = new txt_img_read(fifos[FIFO_TIR_CLAS], in_img_file, numRows, numCols, 0);
+    actors.push_back(imageRead); // Not sure if this holds the reference, only use imageRead
     descriptors.push_back((char*)"actor txt img read");
 
-    actors.push_back(new image_rotate(fifos[FIFO_IMREAD_IMROT], fifos[FIFO_FILESRC_IMROT], fifos[FIFO_IMROT_IMWRITE]));
+    actors.push_back();
     descriptors.push_back((char*)"actor image rotate");
 
     actors.push_back(new txt_img_write(fifos[FIFO_IMROT_IMWRITE], out_img_file, 0));

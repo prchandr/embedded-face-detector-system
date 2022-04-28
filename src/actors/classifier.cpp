@@ -1,6 +1,5 @@
 #include <iostream>
 #include "classifier.h"
-#include "integateImage.h"
 
 #include "../utils/weakClassifier.h"
 
