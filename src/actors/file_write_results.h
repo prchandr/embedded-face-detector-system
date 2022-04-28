@@ -32,8 +32,7 @@ Error - Enters this mode if there is an error with writing to the text file.
 
 class file_write_results : public welt_cpp_actor{
 public:
-    file_write_results(welt_c_fifo_pointer input_in, 
-            welt_c_fifo_pointer continue_out);
+    file_write_results(welt_c_fifo_pointer input_in, string output_filename);
     ~file_write_results() override;
 
     bool enable() override;
@@ -47,6 +46,7 @@ public:
 private:
     /* Inner parameters */
     int resultCounter;
+    string outputFilename;
 
     /* FIFO pointers */
     welt_c_fifo_pointer input_port;
