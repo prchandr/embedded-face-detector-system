@@ -1,7 +1,8 @@
 #include <iostream>
 #include "classifier.h"
-#include "weakClassifier.h"
-#include "integrateImage.h"
+#include "integateImage.h"
+
+#include "../utils/weakClassifier.h"
 
 #define MAX_FIFO_COUNT 3
 

@@ -1,7 +1,7 @@
 #ifndef weak_classifier_h
 #define weak_classifier_h
 
-#include <stdio.h>
+#include <fstream>
 
 // Define Types of Features
 enum featureType {
