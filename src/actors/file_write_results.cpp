@@ -1,5 +1,7 @@
 #include <iostream>
+#include <fstream>
 #include "file_write_results.h"
+#include "../utils/imageSubwindow.h"
 
 #define MAX_FIFO_COUNT 1
 
@@ -7,7 +9,8 @@ using namespace std;
 
 file_write_results::file_write_results(welt_c_fifo_pointer input_in, string output_filename) {
     this->input_port = input_in;
-
+    this->resultCounter = 0;
+    this->outputFilename = output_filename;
     this->actor_set_max_port_count(MAX_FIFO_COUNT);
     this->mode = CLASSIFIER_MODE_CONFIGURE;
 }
@@ -16,7 +19,7 @@ bool file_write_results::enable() {
     bool result = false;
     switch (mode) {
         case FILE_WRITE_PROCESS:
-            result = true;
+            result = (welt_c_fifo_population(input_port) > 0);
             break;
 
         case FILE_WRITE_ERROR:
@@ -33,19 +36,35 @@ bool file_write_results::enable() {
 void file_write_results::invoke() {
     switch (mode) {
         case FILE_WRITE_PROCESS: {
-	    welt_c_fifo_read(input_port, &resultCounter);
-	    if (resultCounter == 0)
-	      outputFileName += "NF\n";
-	    else
-	      outputFileName += "F\n";
-	    outStream << outputFileName << endl;
-	    mode = FILE_WRITE_PROCESS;
+            resultCounter++;
+            ImageSubwindow *image;
+    	    welt_c_fifo_read(this->input_port, &image);
+
+            string result;
+    	    if (image == nullptr){
+                result = "NF";
+            } else {
+                result = "F";
+            }
+
+            // Open stream and append results
+            ofstream outStream;
+            outStream.open(this->outputFilename, ofstream::app);
+
+            if (!outStream.is_open()) {
+                cerr << "Error: Unable to open output file: " << this->outputFilename << endl;
+                mode = FILE_WRITE_ERROR;
+                break;
+            }
+
+    	    outStream << resultCounter << " " << result << endl;
+            outStream.close();
             break;
         }
 
         case FILE_WRITE_ERROR: {
-	    /* Remain in the same mode, do nothing */
-	    mode = FILE_WRITE_ERROR;
+	       /* Remain in the same mode, do nothing */
+	       mode = FILE_WRITE_ERROR;
             break;
         }
 
@@ -57,6 +76,7 @@ void file_write_results::invoke() {
 
 void file_write_results::reset() {
     mode = FILE_WRITE_PROCESS;
+    
 }
 
 void file_write_results::connect(welt_cpp_graph *graph) {
