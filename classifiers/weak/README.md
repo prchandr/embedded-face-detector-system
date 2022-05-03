@@ -5,7 +5,7 @@ The format of the file is as shown below.
 ```
 <feature_type> <width> <height>
 <start_row> <start_col>
-<parity> <threshold>
+<polarity> <threshold>
 ```
 
 The <feature\_ type> is an integer in [0, 4] that specifies the type of Haar-like feature that the clasifier uses. The <width> and <height> arguments are integers in [1, 24] that represent the dimensions of the feature. The dimensions provided are expected to be in accordance with the feature type (for example, Type 0 cannot have height 1, or Type 4 cannot be 2x1).
@@ -44,7 +44,7 @@ The <start\_row> and <start\_col> are integers that represent the location of th
 
 Both the feature dimensions and the start coordinates must allow the entire feature to stay within the 24x24 subwindow.
 
-The <parity> and <threshold> values default to 1 and 0.5, respectively, until the classifier is properly trained on the training set. 
+The <polarity> and <threshold> values default to 1 and 0.5, respectively, until the classifier is properly trained on the training set. 
 
 e.g. wc_1.txt
 ```
