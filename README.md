@@ -3,7 +3,7 @@ ENEE408M Capstone: Embedded Face Detector System using Viola-Jones for Raspberry
 
 The Viola-Jones algorithm is an object-detection framework that allows for the detection of specific image features in real time. There are two main stages in the Viola-Jones algorithm: training and detection.
 
-During the training stage, the machine is being trained to identify Haar-like features. There are three types of Haar-like features that are identified by the Viola-Jones algorithm: edge features, line features, and four-sided features. Since these images have been converted to grayscale, there is a dark side and a light side to each of these features. The two important features for Face Detection, the horizontal and the vertifcal features, describe the eyebrows and the nose respectively.
+During the training stage, the machine is being trained to identify Haar-like features. There are three types of Haar-like features that are identified by the Viola-Jones algorithm: edge features, line features, and four-sided features. Since these images have been converted to grayscale, there is a dark side and a light side to each of these features. The two important features for Face Detection, the horizontal and the vertical features, describe the eyebrows and the nose respectively.
 
 The algorithm then shrinks the image to a 24x24 subwindow and looks for trained features within the image. The more facial data the algorithm consumes, the algorithm can more accurately set the minimum threshold to determine whether something can be classified as a feature or not. Additionally, the more non-facial data the algorithm consumes, the algorithm can more accurately differentiate between the two, understanding what images are faces and what images just look similar to a face.
 
