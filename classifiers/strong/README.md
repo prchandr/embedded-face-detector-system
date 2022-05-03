@@ -9,12 +9,12 @@ The format of the classifier file is as follows:
 <weight>					| Weak Classifier #1 Weight 
 <feature_type> <width> <height>			|
 <start_row> <start_col>				| Weak Classifier #1 Config
-<parity> <threshold>				|
+<polarity> <threshold>				|
 
 <weight>					| Weak Classifier #2 Weight
 <feature_type> <width> <height>			|
 <start_row> <start_col>				| Weak Classifier #2 Config
-<parity> <threshold>				|
+<polarity> <threshold>				|
 .
 .
 .
