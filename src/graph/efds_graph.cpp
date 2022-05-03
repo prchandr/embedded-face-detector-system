@@ -2,10 +2,11 @@
 
 #include "txt_img_read.h"
 #include "../actors/classifier.h"
-#include "../actors/imageSubwindow.h"
+#include "../utils/imageSubwindow.h"
 #include "../actors/integrateImage.h"
 #include "../actors/file_write_results.h"
 
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -55,22 +56,22 @@ efds_graph::efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector
 
 void efds_graph::scheduler() {
     // Get reference to image read actor
-    txt_img_read &imageRead = actors[ACTOR_TXT_IMG_READ];
+    txt_img_read *imageRead = actors[ACTOR_TXT_IMG_READ];
 
     // Iterate through all the images
     string imageFileName;
     for (auto &imageIndex: this->imageIndices) {
         imageFileName = this->imageDir + to_string(imageIndex);
-        imageRead.setFileName(imageFileName);
+        imageRead->setFileName((char*) imageFileName.c_str());
 
-        if (imageRead.enable()) {
-            imageRead.invoke();
+        if (imageRead->enable()) {
+            imageRead->invoke();
         }
 
         // Integrate Image, Run through Classifiers, and write results
         for (int i = 0; i < numClassifierActors + 2; i++) {
-            if (actors[ACTOR_INTEGR_IMG + i].enable()) {
-                actors[ACTOR_INTEGR_IMG + i].invoke();
+            if (actors[ACTOR_INTEGR_IMG + i]->enable()) {
+                actors[ACTOR_INTEGR_IMG + i]->invoke();
             }
         }
     }

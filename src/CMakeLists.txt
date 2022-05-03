@@ -6,8 +6,9 @@ SET(CMAKE_CXX_STANDARD 14)
 SET(CMAKE_EXPORT_COMPILE_COMMANDS on)
 
 INCLUDE_DIRECTORIES(
-		actors
+	actors
         graph
+	utils
         $ENV{UXWELTERC}/src/gems/actors/basic
         $ENV{UXWELTERC}/src/gems/actors/common
         $ENV{UXWELTERC}/src/gems/edges
@@ -23,7 +24,12 @@ INCLUDE_DIRECTORIES(
 )
 
 add_library(efds_src
-		)
+        graph/efds_graph.cpp
+        actors/classifier.cpp
+        actors/file_write_results.cpp
+        actors/integrateImage.cpp
+        utils/weakClassifier.cpp
+	  utils/imageSubwindow.h)
 
 INSTALL(TARGETS efds_src DESTINATION
         $ENV{UXTMP})

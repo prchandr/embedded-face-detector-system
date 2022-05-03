@@ -12,7 +12,7 @@ extern "C" {
 
 #include "welt_cpp_actor.h"
 #include "welt_cpp_graph.h"
-#include "imageSubWindow.h"
+#include "../utils/imageSubwindow.h"
 
 #include <vector>
 

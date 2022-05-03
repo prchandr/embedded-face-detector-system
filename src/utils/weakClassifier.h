@@ -10,7 +10,7 @@ enum featureType {
 	VERTICAL_LINE,		// 2
 	HORIZONTAL_LINE,	// 3
 	FOUR_RECTANGLE		// 4
-}
+};
 
 /*
 This class represents a weak classifier. It uses a feature, 
@@ -47,6 +47,6 @@ private:
 	int startRow, startCol;
 	float threshold;
 	int polarity;
-}
+};
 
 #endif

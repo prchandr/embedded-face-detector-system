@@ -3,10 +3,9 @@
 
 #include <vector>
 
-struct ImageSubwindow {
+struct image_subwindow {
 	vector<vector<int>> *image;
 	int startRow, startCol;
 };
-
 
 #endif
