@@ -1,14 +1,44 @@
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
 
-#include "../../src/actors/weakClassifier.h"
+#include "../../src/utils/FeatureType.h"
+#include "../../src/utils/WeakClassifier.h"
 #include "../../src/graph/efds_graph.h"
 
 using namespace std;
 
 istream &readClassifier(istream &input, WeakClassifier &classifier) {
-	input >> classifier.featureType >> classifier.width >> classifier.height >> classifier.startRow >> classifier.startCol >> classifier.polarity >> classifier.threshold;
+	FeatureType featureType;
+	int featureInt, width, height, startRow, startCol, polarity, threshold;
+	input >> featureInt >> width >> height >> startRow >> startCol >> polarity >> threshold;
+
+	switch (featureInt) {
+		case 0:
+			featureType = VERTICAL_EDGE;
+			break;
+		case 1:
+			featureType = HORIZONTAL_EDGE;
+			break;
+		case 2:
+			featureType = VERTICAL_LINE;
+			break;
+		case 3:
+			featureType = HORIZONTAL_LINE;
+			break;
+		case 4:
+			featureType = FOUR_RECTANGLE;
+			break;
+		default:
+			cerr << "Error: Feature Type is invalid.\n";
+			break;
+	}
+
+	classifier.setFeatureType(featureType);
+	classifier.setDimensions(width, height);
+	classifier.setStartCoords(startRow, startCol);
+	classifier.setClassifyParams(polarity, threshold);
 	return input;
 }
 
@@ -42,7 +72,7 @@ int main(int argc, char **argv) {
 	int classifierIndex;
 	string strongFileName;
 	vector<vector<WeakClassifier>> classifiers;
-	vector<vector<int>> weights;
+	vector<vector<float>> weights;
 
 	// Variables for individual classifiers
 	ifstream classifierInput;
@@ -86,9 +116,9 @@ int main(int argc, char **argv) {
 		imageIndices.push_back(imageIndex);
 	}
 
-    auto* efds_graph = new efds_graph(classifiers, weights, imageDir, imageIndices, output);
+    efds_graph *efds_graph_instance = new efds_graph(classifiers, weights, imageDir, imageIndices, output);
     /* Execute the graph. */
-    efds_graph->scheduler();
+    efds_graph_instance->scheduler();
 
     /* Normal termination. */
     return 0;
