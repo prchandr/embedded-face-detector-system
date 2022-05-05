@@ -1,8 +1,9 @@
+#include "WeakClassifier.h"
 
 #include "ImageSubwindow.h"
-#include "WeakClassifier.h"
-#include <vector>
 #include "FeatureType.h"
+
+#include <vector>
 
 using namespace std;
 
@@ -49,32 +50,9 @@ void WeakClassifier::setClassifyParams(int polarity, int threshold) {
 bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 	int pos, neg;
     vector<vector<int>> &img = *integral_image.image;
-	switch(feature)
-	{
-		case VERTICAL_EDGE: //feature type 1
-		{
-			if(startRow!=0 && startCol!=0)
-			{
-				neg = img[startRow-1][startCol-1] + img[startRow+ height/2-1][startCol + width - 1]
-						- img[startRow + height/2-1][startCol-1] - img[startRow-1][startCol + width-1];
-				pos = img[startRow-1 + height/2-1][startCol-1] + img[startRow+ height-1][startCol + width-1]
-						- img[startRow + height-1][startCol-1] - img[startRow+height/2-1][startCol + width-1];
-				//calculate positive and negative values based on integrated image.
-			}
-			else if(startRow == 0 && startCol!=0) 
-			{
-				neg = img[startRow+ height/2-1][startCol + width - 1]
-						- img[startRow + height/2-1][startCol-1];
-				pos = img[startRow-1 + height/2-1][startCol-1] + img[startRow+ height-1][startCol + width-1]
-						- img[startRow + height-1][startCol-1] - img[startRow+height/2-1][startCol + width-1];
-			}
-			if(startRow!=0 && startCol == 0)
-			{
-
-	
 
 	switch(feature) {
-		case VERTICAL_EDGE: {
+		case VERTICAL_EDGE: { //feature type 1
 			if (startRow != 0 && startCol != 0) {
 				neg = img[startRow - 1][startCol - 1] 
 					+ img[startRow + height/2 - 1][startCol + width - 1]
@@ -110,8 +88,7 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 
 			break;
 		}
-		case HORIZONTAL_EDGE: //feature type 2
-		{
+		case HORIZONTAL_EDGE: { //feature type 2
 			if(startRow!=0 && startCol!=0)
 			{
 				neg = img[startRow-1][startCol-width/2-1] + img[startRow+ height-1][startCol + width - 1]
@@ -270,11 +247,14 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 			break;
 	}
 
-	if(pos-neg < 0)
-		polarity = -1;
-	else
-		polarity = 1;
 	//update the polarity based on feature values
-	return (polarity * (pos-neg) > polarity*threshold);
+	if (pos - neg < 0) {
+		polarity = -1;
+	}
+	else {
+		polarity = 1;
+	}
+	
+	return (polarity * (pos - neg) > polarity * threshold);
 }
 
