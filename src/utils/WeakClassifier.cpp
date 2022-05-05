@@ -1,8 +1,9 @@
 #include "WeakClassifier.h"
+
 #include "ImageSubwindow.h"
+#include "FeatureType.h"
 
 #include <vector>
-#include "FeatureType.h"
 
 using namespace std;
 
@@ -48,10 +49,10 @@ void WeakClassifier::setClassifyParams(int polarity, int threshold) {
 
 bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 	int pos, neg;
-	vector<vector<int>> &img = *integral_image.image;
+    vector<vector<int>> &img = *integral_image.image;
 
 	switch(feature) {
-		case VERTICAL_EDGE: {
+		case VERTICAL_EDGE: { //feature type 1
 			if (startRow != 0 && startCol != 0) {
 				neg = img[startRow - 1][startCol - 1] 
 					+ img[startRow + height/2 - 1][startCol + width - 1]
@@ -72,6 +73,7 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 			}
 			
 			if (startRow != 0 && startCol == 0) {
+
 				neg = img[startRow+ height/2-1][startCol + width - 1]
 						- img[startRow-1][startCol + width-1];
 				pos = img[startRow+ height-1][startCol + width-1]
@@ -86,8 +88,7 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 
 			break;
 		}
-		case HORIZONTAL_EDGE:
-		{
+		case HORIZONTAL_EDGE: { //feature type 2
 			if(startRow!=0 && startCol!=0)
 			{
 				neg = img[startRow-1][startCol-width/2-1] + img[startRow+ height-1][startCol + width - 1]
@@ -117,7 +118,7 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 			}
 			break;
 		}
-		case VERTICAL_LINE:
+		case VERTICAL_LINE: //feature type 3
 		{
 			if(startRow!=0 && startCol!=0)
 			{
@@ -156,7 +157,7 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 			}
 			break;
 		}
-		case HORIZONTAL_LINE:
+		case HORIZONTAL_LINE: //feature type 4
 		{
 			if(startRow!=0 && startCol!=0)
 			{
@@ -195,7 +196,7 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 			}
 			break;
 		}
-		case FOUR_RECTANGLE:
+		case FOUR_RECTANGLE: //feature type 5
 		{
 			if(startRow!=0 && startCol!=0)
 			{
@@ -245,6 +246,15 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 		default:
 			break;
 	}
+
+	//update the polarity based on feature values
+	if (pos - neg < 0) {
+		polarity = -1;
+	}
+	else {
+		polarity = 1;
+	}
 	
-	return (polarity * (pos-neg) > polarity * threshold);
+	return (polarity * (pos - neg) > polarity * threshold);
 }
+
