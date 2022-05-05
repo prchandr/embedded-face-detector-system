@@ -1,7 +1,7 @@
 #include "weightupdate.h"
 
 
-training::weightinitialize(vector<vector<vector<int>>> img) {
+weightupdate::weightupdate(vector<vector<vector<int>>> img) {
 	for(int i=0; i<index ; i++)
 	{
 		if(vector[i] == 1)
@@ -28,7 +28,7 @@ training::weightinitialize(vector<vector<vector<int>>> img) {
 }
 
 
-float training::normalize(float weight){
+float weightupdate::normalize(float weight){
 	
 	for(int j=0; i<index; i++)
 	{
@@ -41,7 +41,7 @@ float training::normalize(float weight){
 	//weight nomarlize
 }
 	
-float training::update(float weight){
+float weightupdate::update(float weight){
 	
 	WeakClassifier Weak.WeakClassifier(feature, width, height, startRow, startCol, polarity, threshold);
 	for(int i=0; i<index; i++)

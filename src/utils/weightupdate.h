@@ -10,13 +10,13 @@ threshold, and polarity to classify an image as a face or
 non-face.
 */
 
-class training {
+class weightupdate {
 public:
-	training();
 
-	// Getters for private variables
-	float training::normalize(float weight);
-	training::weightinitialize(vector<vector<vector<int>>> img);
+    weightupdate::weightupdate(vector<vector<vector<int>>> img)
+	float weightupdate::normalize(float weight);
+    
+    float training::update(float weight)
 
 	// Setters for private variables
 	
