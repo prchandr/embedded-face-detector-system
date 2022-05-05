@@ -21,7 +21,7 @@ INCLUDE_DIRECTORIES(
         $ENV{UXWELTER}/lang/cpp/src/apps/basic
         ${PROJECT_SOURCE_DIR}/../src/graph
 		${PROJECT_SOURCE_DIR}/../src/actors
-		${PROJECT_SOURCE_DIR}/../src/utils.h
+		${PROJECT_SOURCE_DIR}/../src/utils
 )
 
 LINK_DIRECTORIES(
@@ -30,8 +30,8 @@ LINK_DIRECTORIES(
 )
 
 ADD_EXECUTABLE(
-        image_rotation_graph_driver.exe
-        image_rotation_graph_driver.cpp
+        efds_graph_driver.exe
+        efds_graph_driver.cpp
 )
 
 TARGET_LINK_LIBRARIES(

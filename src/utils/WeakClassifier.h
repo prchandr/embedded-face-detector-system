@@ -3,15 +3,7 @@
 
 #include <fstream>
 #include "ImageSubwindow.h"
-
-// Define Types of Features
-enum featureType {
-	VERTICAL_EDGE,  	// 0
-	HORIZONTAL_EDGE,	// 1
-	VERTICAL_LINE,		// 2
-	HORIZONTAL_LINE,	// 3
-	FOUR_RECTANGLE		// 4
-};
+#include "FeatureType.h"
 
 /*
 This class represents a weak classifier. It uses a feature, 
@@ -21,14 +13,15 @@ non-face.
 
 class WeakClassifier {
 public:
-	WeakClassifier(featureType feature, int width, int height,
+	WeakClassifier();
+	WeakClassifier(FeatureType feature, int width, int height,
 				int startRow, int startCol,
 				int polarity, int threshold);
 
 	bool classifyImage(ImageSubwindow integralImage);
 
 	// Getters for private variables
-	featureType getFeatureType();
+	FeatureType getFeatureType();
 	int getWidth();
 	int getHeight();
 	int getRowStart();
@@ -37,13 +30,13 @@ public:
 	int getPolarity();
 
 	// Setters for private variables
-	void setFeatureType(featureType feature);
+	void setFeatureType(FeatureType feature);
 	void setDimensions(int width, int height);
 	void setStartCoords(int startRow, int startCol);
 	void setClassifyParams(int polarity, int threshold);
 
 private:
-	featureType feature;
+	FeatureType feature;
 	int width, height;
 	int startRow, startCol;
 	int threshold;

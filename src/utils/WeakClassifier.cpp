@@ -2,10 +2,21 @@
 #include "ImageSubwindow.h"
 #include "WeakClassifier.h"
 #include <vector>
+#include "FeatureType.h"
 
 using namespace std;
 
-WeakClassifier::WeakClassifier(featureType feature, int width, int height,
+WeakClassifier::WeakClassifier() {
+	this->feature = VERTICAL_EDGE;
+	this->width = 0;
+	this->height = 0;
+	this->startRow = 0;
+	this->startCol = 0;
+	this->threshold = 0;
+	this->polarity = 0;
+}
+
+WeakClassifier::WeakClassifier(FeatureType feature, int width, int height,
 				int startRow, int startCol, int polarity, int threshold) {
 	this->feature = feature;
 	this->width = width;
@@ -16,7 +27,7 @@ WeakClassifier::WeakClassifier(featureType feature, int width, int height,
 	this->polarity = polarity;
 }
 
-void WeakClassifier::setFeatureType(featureType feature) {
+void WeakClassifier::setFeatureType(FeatureType feature) {
 	this->feature = feature;
 }
 
