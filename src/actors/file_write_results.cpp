@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "file_write_results.h"
-#include "../utils/imageSubwindow.h"
+#include "../utils/ImageSubwindow.h"
 
 #define MAX_FIFO_COUNT 1
 
@@ -12,7 +12,7 @@ file_write_results::file_write_results(welt_c_fifo_pointer input_in, string outp
     this->resultCounter = 0;
     this->outputFilename = output_filename;
     this->actor_set_max_port_count(MAX_FIFO_COUNT);
-    this->mode = CLASSIFIER_MODE_CONFIGURE;
+    this->mode = FILE_WRITE_PROCESS;
 }
 
 bool file_write_results::enable() {
@@ -69,14 +69,13 @@ void file_write_results::invoke() {
         }
 
         default:
-	    mode = FILE_WRITE_ERROR:
+            mode = FILE_WRITE_ERROR;
             break;
     }
 }
 
 void file_write_results::reset() {
     mode = FILE_WRITE_PROCESS;
-    
 }
 
 void file_write_results::connect(welt_cpp_graph *graph) {

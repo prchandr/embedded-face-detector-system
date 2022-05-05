@@ -1,61 +1,73 @@
-#include "weakClassifier.h"
+#include "WeakClassifier.h"
+#include "ImageSubwindow.h"
+
+#include <vector>
 
 using namespace std;
 
-weakClassifier::weakClassifier(featureType feature, int width, int height,
-				int startRow, int startCol,
-				int polarity, float threshold) {
-	void setFeatureType(featureType feature);
-	{
-		this->feature = feature;
-	}
-	void setDimensions(int width, int height)
-	{
-		this->width = width;
-		this->height = height;
-	}
-	void setStartCoord(int startRow, int startCol)
-	{
-		this->startRow = startRow;
-		this->startCol = startCol;
-	}
-	void setClassifyParams(int polarity, float threshold)
-	{
-		this->polarity = polarity;
-		this->threshold = threshold;
-	}
+WeakClassifier::WeakClassifier(featureType feature, int width, int height,
+				int startRow, int startCol, int polarity, int threshold) {
+	this->feature = feature;
+	this->width = width;
+	this->height = height;
+	this->startRow = startRow;
+	this->startCol = startCol;
+	this->threshold = threshold;
+	this->polarity = polarity;
 }
 
+void WeakClassifier::setFeatureType(featureType feature) {
+	this->feature = feature;
+}
 
-bool weakClassifier::classifyImage(ImageSubwindow integral_image){
+void WeakClassifier::setDimensions(int width, int height) {
+	this->width = width;
+	this->height = height;
+}
+
+void WeakClassifier::setStartCoords(int startRow, int startCol) {
+	this->startRow = startRow;
+	this->startCol = startCol;
+}
+	
+void WeakClassifier::setClassifyParams(int polarity, int threshold) {
+	this->polarity = polarity;
+	this->threshold = threshold;
+}
+
+bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 	int pos, neg;
-	switch(feature)
-	{
-		case VERTICAL_EDGE:
-		{
-			if(startRow!=0 && startCol!=0)
-			{
-				neg = img[startRow-1][startCol-1] + img[startRow+ height/2-1][startCol + width - 1]
-						- img[startRow + height/2-1][startCol-1] - img[startRow-1][startCol + width-1];
-				pos = img[startRow-1 + height/2-1][startCol-1] + img[startRow+ height-1][startCol + width-1]
-						- img[startRow + height-1][startCol-1] - img[startRow+height/2-1][startCol + width-1];
+	vector<vector<int>> &img = *integral_image.image;
+
+	switch(feature) {
+		case VERTICAL_EDGE: {
+			if (startRow != 0 && startCol != 0) {
+				neg = img[startRow - 1][startCol - 1] 
+					+ img[startRow + height/2 - 1][startCol + width - 1]
+					- img[startRow + height/2 - 1][startCol - 1]
+					- img[startRow - 1][startCol + width - 1];
+
+				pos = img[startRow - 1 + height/2 - 1][startCol - 1]
+					+ img[startRow + height - 1][startCol + width - 1]
+					- img[startRow + height - 1][startCol - 1]
+					- img[startRow + height/2 - 1][startCol + width - 1];
+			} else if(startRow == 0 && startCol != 0) {
+				neg = img[startRow+ height/2 - 1][startCol + width - 1]
+					- img[startRow + height/2 - 1][startCol - 1];
+				pos = img[startRow - 1 + height/2 - 1][startCol - 1]
+					+ img[startRow + height - 1][startCol + width - 1]
+					- img[startRow + height - 1][startCol - 1]
+					- img[startRow + height/2 - 1][startCol + width - 1];
 			}
-			else if(startRow == 0 && startCol!=0)
-			{
-				neg = img[startRow+ height/2-1][startCol + width - 1]
-						- img[startRow + height/2-1][startCol-1];
-				pos = img[startRow-1 + height/2-1][startCol-1] + img[startRow+ height-1][startCol + width-1]
-						- img[startRow + height-1][startCol-1] - img[startRow+height/2-1][startCol + width-1];
-			}
-			if(startRow!=0 && startCol == 0)
-			{
+			
+			if (startRow != 0 && startCol == 0) {
 				neg = img[startRow+ height/2-1][startCol + width - 1]
 						- img[startRow-1][startCol + width-1];
 				pos = img[startRow+ height-1][startCol + width-1]
 						- img[startRow+height/2-1][startCol + width-1];
 			}
-			else if(startRow == 0 && startCol == 0)
-			{
+
+			else if(startRow == 0 && startCol == 0) {
 				neg = img[startRow+ height/2-1][startCol + width - 1];
 				pos = img[startRow+ height-1][startCol + width-1]
 						- img[startRow+height/2-1][startCol + width-1];
@@ -219,10 +231,9 @@ bool weakClassifier::classifyImage(ImageSubwindow integral_image){
 			}
 			break;
 		}
-		default;
+		default:
 			break;
 	}
 	
-	return (polarity * (pos-neg) > polarity*threshold);
+	return (polarity * (pos-neg) > polarity * threshold);
 }
-

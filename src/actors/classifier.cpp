@@ -1,7 +1,9 @@
 #include <iostream>
 #include "classifier.h"
 
-#include "../utils/weakClassifier.h"
+#include "../utils/WeakClassifier.h"
+#include "../utils/ImageSubwindow.h"
+
 
 #define MAX_FIFO_COUNT 3
 
@@ -35,14 +37,9 @@ bool classifier::enable() {
         case CLASSIFIER_MODE_CLASSIFY:
             break;
 
-        case CLASSIFIER_MODE_FALSE:
-            result = (welt_c_fifo_population(abort_out) 
-                < welt_c_fifo_capacity(abort_out));
-            break;
-
-        case CLASSIFIER_MODE_TRUE:
-            result = (welt_c_fifo_population(continue_out) 
-                    < welt_c_fifo_capacity(continue_out));
+        case CLASSIFIER_MODE_FALSE: case CLASSIFIER_MODE_TRUE:
+            result = (welt_c_fifo_population(continue_port) 
+                < welt_c_fifo_capacity(continue_port));
             break;
 
         default:

@@ -12,7 +12,8 @@ extern "C" {
 #include "welt_cpp_graph.h"
 #include "welt_cpp_util.h"
 
-#include "../utils/weakClassifier.h"
+#include "txt_img_read.h"
+#include "../utils/WeakClassifier.h"
 
 #define BUFFER_CAPACITY 1024
 #define MAX_CLASSIFIERS 32
@@ -50,6 +51,7 @@ private:
     string imageDir;
     vector<int> imageIndices;
     int numClassifierActors;
+    txt_img_read *imageRead;
 };
 
 #endif

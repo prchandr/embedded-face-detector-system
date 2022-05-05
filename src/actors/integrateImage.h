@@ -12,7 +12,7 @@ extern "C" {
 
 #include "welt_cpp_actor.h"
 #include "welt_cpp_graph.h"
-#include "imageSubWindow.h"
+#include "../utils/ImageSubwindow.h"
 
 #include <vector>
 
@@ -42,9 +42,10 @@ public:
     void connect(welt_cpp_graph *graph) override;
 
 private:
-    void integrate(vector<vector<int>> *image);
+    void integrate(vector<vector<int>> &image);
 
     /* Private variable */
+    vector<vector<int>> image;
     ImageSubwindow integralImage;
 
     /* FIFO pointers */
