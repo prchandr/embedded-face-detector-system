@@ -31,7 +31,7 @@ bool weakClassifier::classifyImage(ImageSubwindow integral_image){
 	int pos, neg;
 	switch(feature)
 	{
-		case VERTICAL_EDGE:
+		case VERTICAL_EDGE: //feature type 1
 		{
 			if(startRow!=0 && startCol!=0)
 			{
@@ -39,8 +39,9 @@ bool weakClassifier::classifyImage(ImageSubwindow integral_image){
 						- img[startRow + height/2-1][startCol-1] - img[startRow-1][startCol + width-1];
 				pos = img[startRow-1 + height/2-1][startCol-1] + img[startRow+ height-1][startCol + width-1]
 						- img[startRow + height-1][startCol-1] - img[startRow+height/2-1][startCol + width-1];
+				//calculate positive and negative values based on integrated image.
 			}
-			else if(startRow == 0 && startCol!=0)
+			else if(startRow == 0 && startCol!=0) 
 			{
 				neg = img[startRow+ height/2-1][startCol + width - 1]
 						- img[startRow + height/2-1][startCol-1];
@@ -63,7 +64,7 @@ bool weakClassifier::classifyImage(ImageSubwindow integral_image){
 
 			break;
 		}
-		case HORIZONTAL_EDGE:
+		case HORIZONTAL_EDGE: //feature type 2
 		{
 			if(startRow!=0 && startCol!=0)
 			{
@@ -94,7 +95,7 @@ bool weakClassifier::classifyImage(ImageSubwindow integral_image){
 			}
 			break;
 		}
-		case VERTICAL_LINE:
+		case VERTICAL_LINE: //feature type 3
 		{
 			if(startRow!=0 && startCol!=0)
 			{
@@ -133,7 +134,7 @@ bool weakClassifier::classifyImage(ImageSubwindow integral_image){
 			}
 			break;
 		}
-		case HORIZONTAL_LINE:
+		case HORIZONTAL_LINE: //feature type 4
 		{
 			if(startRow!=0 && startCol!=0)
 			{
@@ -172,7 +173,7 @@ bool weakClassifier::classifyImage(ImageSubwindow integral_image){
 			}
 			break;
 		}
-		case FOUR_RECTANGLE:
+		case FOUR_RECTANGLE: //feature type 5
 		{
 			if(startRow!=0 && startCol!=0)
 			{
@@ -222,7 +223,11 @@ bool weakClassifier::classifyImage(ImageSubwindow integral_image){
 		default;
 			break;
 	}
-	
+	if(pos-neg < 0)
+		polarity = -1;
+	else
+		polarity = 1;
+	//update the polarity based on feature values
 	return (polarity * (pos-neg) > polarity*threshold);
 }
 
