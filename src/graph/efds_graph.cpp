@@ -2,12 +2,17 @@
 
 #include "txt_img_read.h"
 #include "../actors/classifier.h"
-#include "../utils/imageSubwindow.h"
 #include "../actors/integrateImage.h"
 #include "../actors/file_write_results.h"
 
+#include "../utils/WeakClassifier.h"
+#include "../utils/ImageSubwindow.h"
+
 #include <iostream>
 #include <string>
+
+#define IMAGE_WIDTH     24
+#define IMAGE_HEIGHT    24
 
 using namespace std;
 
@@ -20,7 +25,7 @@ efds_graph::efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector
     this->imageIndices = imageIndices;
 
     /* Initialize fifos to have a size of a pointer. */
-    int token_size = sizeof(imageSubwindow *image);
+    int token_size = sizeof(ImageSubwindow*);
 
     for (int fifo_idx = 0; fifo_idx < FIFO_COUNT; fifo_idx++) {
         fifos.push_back((welt_c_fifo_pointer) welt_c_fifo_new(BUFFER_CAPACITY,
@@ -31,14 +36,16 @@ efds_graph::efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector
     Create actors in the actors vector and put descriptions
     for each actor in the descriptions vector.
     ***************************************************************************/
-    actors.push_back(new txt_img_read(fifos[FIFO_TIR_II], in_img_file, numRows, numCols, 0));
+    char defaultFileName[] = "image0.txt";
+    this->imageRead = new txt_img_read(fifos[FIFO_TIR_II], defaultFileName, IMAGE_WIDTH, IMAGE_HEIGHT, 0);
+    actors.push_back(this->imageRead);
     descriptors.push_back((char*)"actor txt img read");
 
     actors.push_back(new integrateImage(fifos[FIFO_TIR_II], fifos[FIFO_II_CLAS]));
     descriptors.push_back((char*)"actor integrate image");
 
     int fifoIndex = FIFO_II_CLAS;
-    this->numClassifierActors = min(classifiers.size(), MAX_CLASSIFIERS);
+    this->numClassifierActors = min((int)classifiers.size(), MAX_CLASSIFIERS);
     for (int i = 0; i < numClassifierActors; i++) {
         actors.push_back(new classifier(fifos[fifoIndex], fifos[fifoIndex + 1],
                 classifiers[i], weights[i]));
@@ -55,9 +62,6 @@ efds_graph::efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector
 }
 
 void efds_graph::scheduler() {
-    // Get reference to image read actor
-    txt_img_read *imageRead = actors[ACTOR_TXT_IMG_READ];
-
     // Iterate through all the images
     string imageFileName;
     for (auto &imageIndex: this->imageIndices) {

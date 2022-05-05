@@ -3,8 +3,8 @@
 
 #include <vector>
 
-struct image_subwindow {
-	vector<vector<int>> *image;
+struct ImageSubwindow {
+	std::vector<std::vector<int>> *image;
 	int startRow, startCol;
 };
 

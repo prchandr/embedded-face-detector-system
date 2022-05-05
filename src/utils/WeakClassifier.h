@@ -2,6 +2,7 @@
 #define weak_classifier_h
 
 #include <fstream>
+#include "ImageSubwindow.h"
 
 // Define Types of Features
 enum featureType {
@@ -22,7 +23,7 @@ class WeakClassifier {
 public:
 	WeakClassifier(featureType feature, int width, int height,
 				int startRow, int startCol,
-				int polarity, float threshold);
+				int polarity, int threshold);
 
 	bool classifyImage(ImageSubwindow integralImage);
 
@@ -32,20 +33,20 @@ public:
 	int getHeight();
 	int getRowStart();
 	int getColStart();
-	float getThreshold();
+	int getThreshold();
 	int getPolarity();
 
 	// Setters for private variables
 	void setFeatureType(featureType feature);
 	void setDimensions(int width, int height);
-	void setStartCoord(int startRow, int startCol);
-	void setClassifyParams(int polarity, float threshold);
+	void setStartCoords(int startRow, int startCol);
+	void setClassifyParams(int polarity, int threshold);
 
 private:
 	featureType feature;
 	int width, height;
 	int startRow, startCol;
-	float threshold;
+	int threshold;
 	int polarity;
 };
 

@@ -13,7 +13,8 @@ extern "C" {
 #include "welt_cpp_actor.h"
 #include "welt_cpp_graph.h"
 
-#include "../utils/weakClassifier.h"
+#include "../utils/WeakClassifier.h"
+#include "../utils/ImageSubwindow.h"
 
 #include <vector>
 
