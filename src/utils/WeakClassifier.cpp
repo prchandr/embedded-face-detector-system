@@ -255,6 +255,6 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 		polarity = 1;
 	}
 	
-	return (polarity * (pos - neg) > polarity * threshold);
+	return (polarity * (pos - neg) < polarity * threshold);
 }
 
