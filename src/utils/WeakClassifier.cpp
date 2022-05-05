@@ -1,6 +1,6 @@
-#include "WeakClassifier.h"
+																												#include "WeakClassifier.h"
 #include "ImageSubwindow.h"
-
+#include "WeakClassifier.h"
 #include <vector>
 
 using namespace std;
@@ -37,7 +37,7 @@ void WeakClassifier::setClassifyParams(int polarity, int threshold) {
 
 bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 	int pos, neg;
-
+    vector<vector<int>> &img = *integral_image.image;
 	switch(feature)
 	{
 		case VERTICAL_EDGE: //feature type 1
@@ -60,7 +60,7 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 			if(startRow!=0 && startCol == 0)
 			{
 
-	vector<vector<int>> &img = *integral_image.image;
+	
 
 	switch(feature) {
 		case VERTICAL_EDGE: {
