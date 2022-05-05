@@ -4,9 +4,8 @@
 #include <vector>
 
 struct ImageSubwindow {
-	vector<vector<int>> *image;
+	std::vector<std::vector<int>> *image;
 	int startRow, startCol;
 };
-
 
 #endif

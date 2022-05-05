@@ -1,15 +1,14 @@
 #include "training.h"
 
 
-training::training( ) {
+training::training() {
 	
 }
 
 
-bool training::classifyImage(ImageSubwindow integral_image){
-	}
+bool training::classifyImage(ImageSubwindow integral_image) {
 	
-	if(polarity*pos-neg > polarity*threshold)
+        if(polarity*(pos-neg) > polarity*threshold)
 		return true;
 	else
 		return false;

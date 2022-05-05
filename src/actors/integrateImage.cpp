@@ -33,13 +33,20 @@ void integrateImage::invoke() {
     vector<vector<int>> *img = nullptr;
     welt_c_fifo_read(input, &img);
 
+    if (img == nullptr) {
+        cerr << "Error: image pointer received is null.\n";
+        return;
+    }
+
+    this->image = *img;
+
     // Integrate image
-    integrate(*img);
+    integrate(this->image);
 
     // Make Image Subwindow
-	this->integralImage.image = img;
+	this->integralImage.image = &(this->image);
 	this->integralImage.startRow = 0;
-	this->integralImage.startCol = 0;    
+    this->integralImage.startCol = 0; 
 
     // Write to pointer
 	welt_c_fifo_write(output, &(this->integralImage));	
@@ -48,7 +55,7 @@ void integrateImage::invoke() {
 
 void integrateImage::reset() {
     mode = II_MODE_INTEGRATE;
-	this->integralImage.image.clear();
+	this->integralImage.image->clear();
 }
 
 void integrateImage::connect(welt_cpp_graph *graph) {

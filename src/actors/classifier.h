@@ -13,7 +13,8 @@ extern "C" {
 #include "welt_cpp_actor.h"
 #include "welt_cpp_graph.h"
 
-#include "../utils/weakClassifier.h"
+#include "../utils/WeakClassifier.h"
+#include "../utils/ImageSubwindow.h"
 
 #include <vector>
 
@@ -48,12 +49,12 @@ class classifier : public welt_cpp_actor{
 public:
     classifier(welt_c_fifo_pointer input_in, 
             welt_c_fifo_pointer continue_out,
-            welt_c_fifo_pointer abort_out);
+            vector<WeakClassifier> classifiers, vector<float> weights);
     ~classifier() override;
 
     bool enable() override;
    
-	void invoke() override;
+    void invoke() override;
 
     void reset() override;
 
@@ -63,11 +64,11 @@ private:
     /* Inner parameters */
     vector<WeakClassifier> classifiers;
     vector<float> weights;
+    ImageSubwindow *image;
 
     /* FIFO pointers */
     welt_c_fifo_pointer input_port;
     welt_c_fifo_pointer continue_port;
-    welt_c_fifo_pointer abort_port;
 };
 
 #endif
