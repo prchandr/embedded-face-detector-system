@@ -1,4 +1,4 @@
-																												#include "WeakClassifier.h"
+
 #include "ImageSubwindow.h"
 #include "WeakClassifier.h"
 #include <vector>
