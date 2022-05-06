@@ -2,9 +2,6 @@
 
 #Define constants
 MAX_FILES=1024
-
-
-
 iterations=0
 
 # Check if first argument exists, and is valid input

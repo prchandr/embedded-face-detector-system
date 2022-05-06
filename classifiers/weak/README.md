@@ -44,13 +44,13 @@ The <start\_row> and <start\_col> are integers that represent the location of th
 
 Both the feature dimensions and the start coordinates must allow the entire feature to stay within the 24x24 subwindow.
 
-The <polarity> and <threshold> values default to 1 and 0.5, respectively, until the classifier is properly trained on the training set. 
+The <polarity> and <threshold> values default to 1 and 0, respectively, until the classifier is properly trained on the training set. 
 
-e.g. wc_1.txt
+e.g. wc\_1.txt
 ```
 0 6 2
 5 5
-1 0.5
+1 0
 ```
 
 

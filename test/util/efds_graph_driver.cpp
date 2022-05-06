@@ -31,7 +31,7 @@ istream &readClassifier(istream &input, WeakClassifier &classifier) {
 			featureType = FOUR_RECTANGLE;
 			break;
 		default:
-			cerr << "Error: Feature Type is invalid.\n";
+			cerr << "efds_graph_driver.exe error: Feature Type is invalid.\n";
 			break;
 	}
 
@@ -84,7 +84,7 @@ int main(int argc, char **argv) {
 	while (classifierConfigInput >> classifierIndex) {
 		// Obtain filenames for strong classifier file
 		strongFileName = classifierDir + "classifier_" + to_string(classifierIndex) + ".txt";
-		cout << "Reading from file: "  << strongFileName << endl;
+		cout << "efds_graph_driver.exe: Reading from file: "  << strongFileName << endl;
 
 		// Get all weak classifiers and weights in strong classifier file
 		classifierInput.open(strongFileName);
