@@ -18,6 +18,7 @@ WeakClassifier::WeakClassifier() {
 	this->startCol = 0;
 	this->threshold = 0;
 	this->polarity = 0;
+	this->sumResult = 0;
 }
 
 WeakClassifier::WeakClassifier(FeatureType feature, int width, int height,
@@ -29,6 +30,7 @@ WeakClassifier::WeakClassifier(FeatureType feature, int width, int height,
 	this->startCol = startCol;
 	this->threshold = threshold;
 	this->polarity = polarity;
+	this->sumResult = 0;
 }
 
 void WeakClassifier::setFeatureType(FeatureType feature) {
@@ -251,9 +253,9 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image) {
 		default:
 			break;
 	}
-
-	cout << TAG << "classifyImage() result: " << (pos - neg) << endl;
+	this->sumResult = pos - neg;
+	cout << TAG << "classifyImage() result: " << this->sumResult << endl;
 	cout << TAG << "classifyImage() EXIT" << endl;
-	return (polarity * (pos - neg) < polarity * threshold);
+	return (this->polarity * (this->sumResult) < (this->polarity * this->threshold));
 }
 
