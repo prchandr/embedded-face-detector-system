@@ -13,24 +13,15 @@ non-face.
 class threshold_update {
 public:
 
-    threshold_update::threshold_update(float threshold, int index, vector<vector<vector<int>>> img, int y1, int y2);
+    threshold_update::threshold_update(vector<int> feature, vector<int> sample);
     
-    float threshold_update::update(vector<float> weight);
+    int threshold_update::update();
 
     // Setters for private variables
     
 private:
-    featureType feature;
-    int width, height;
-    int startRow, startCol;
-    float threshold;
-    float error =0;
-    float beta = 0;
-    vector<int> e;
-    int polarity;
-    int y1 = 0,y2 = 0;
-    int index;
-    int total_weight=0;
+	vector<int> threshold;
+	vector<int> sample;
 }
 
 #endif

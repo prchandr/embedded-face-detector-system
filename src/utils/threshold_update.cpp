@@ -1,11 +1,12 @@
 #include "threshold_update.h"
 
 
-thrshold_update::threshold_update(float threshold, int index, vector<vector<vector<int>>> img, int y1, int y2) {
-    this->threshold = threshold;
+thrshold_update::threshold_update(vector<int> feature, vector<int> sample) {
+    this->threshold = feature;
+	this->sample = sample;
 }
     
-int thrshold_update::update(vector<int> feature, vector<int> sample){
+int thrshold_update::update(){
     
     vector<int> a;
     float e, e2;
@@ -19,7 +20,6 @@ int thrshold_update::update(vector<int> feature, vector<int> sample){
     {
 		int T =0, S=0, t=0, s=0;
 		int e,e2;
-		vector<int> threshold = feature
 		sort(threshold.begin(), threshold.end());
 		int i;
         for(i=0; i<threshold.size(); i++)
