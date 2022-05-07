@@ -1,30 +1,32 @@
 #include "weightupdate.h"
 
 
-weightupdate::weightupdate(vector<vector<vector<int>>> img) {
+weightupdate::weightupdate(vector<int> sample) {
+	this->index = sample.size();
 	for(int i=0; i<index ; i++)
 	{
-		if(vector[i] == 1)
+		if(sample[i] == 1)
 		{
 			y1++;
 		}
-		else if(vector[i] == -1)
+		else if(sample[i] == -1)
 		{	
 			y2++;
 		}
 	}
 	for(int i=0; i<index ; i++)
 	{
-		if(vector[i] == 1)
+		if(sample[i] == 1)
 		{
 			weight[i] = 1/y1;
 		}
-		else if(vector[i] == -1)
+		else if(sample[i] == -1)
 		{	
 			weight[i] = 1/y2;
 		}
 	}
-	//initial weight value
+	
+	//initialize weight value
 }
 
 

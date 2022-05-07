@@ -13,7 +13,7 @@ non-face.
 class weightupdate {
 public:
 
-    weightupdate::weightupdate(vector<vector<vector<int>>> img)
+    weightupdate::weightupdate(vector<int> sample)
 	float weightupdate::normalize(float weight);
     
     float training::update(float weight)
