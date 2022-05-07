@@ -2,15 +2,17 @@
 #define efds_graph_h
 
 extern "C" {
-#include "welt_c_basic.h"
-#include "welt_c_actor.h"
-#include "welt_c_fifo.h"
-#include "welt_c_graph.h"
-#include "welt_c_util.h"
+    #include "welt_c_basic.h"
+    #include "welt_c_actor.h"
+    #include "welt_c_fifo.h"
+    #include "welt_c_graph.h"
+    #include "welt_c_util.h"
 }
 
 #include "welt_cpp_graph.h"
 #include "welt_cpp_util.h"
+
+#include <string>
 
 #include "txt_img_read.h"
 #include "../utils/WeakClassifier.h"

@@ -7,6 +7,8 @@
 
 #define MAX_FIFO_COUNT 3
 
+#define TAG "classifier::"
+
 using namespace std;
 
 classifier::classifier(welt_c_fifo_pointer input_in, 
@@ -24,6 +26,7 @@ classifier::classifier(welt_c_fifo_pointer input_in,
 }
 
 bool classifier::enable() {
+    cout << TAG << "enable() ENTER" << endl;
     bool result = false;
     switch (mode) {
         case CLASSIFIER_MODE_CONFIGURE:
@@ -35,9 +38,10 @@ bool classifier::enable() {
             break;
 
         case CLASSIFIER_MODE_CLASSIFY:
+            result = true; 
             break;
 
-        case CLASSIFIER_MODE_FALSE: case CLASSIFIER_MODE_TRUE:
+        case CLASSIFIER_MODE_CONTINUE:
             result = (welt_c_fifo_population(continue_port) 
                 < welt_c_fifo_capacity(continue_port));
             break;
@@ -46,38 +50,46 @@ bool classifier::enable() {
             result = false;
             break;
     }
+    cout << TAG << "enable() EXIT result: " << result << endl;
     return result;
 }
 
 void classifier::invoke() {
+    cout << TAG << "invoke() ENTER" << endl;
     switch (mode) {
         case CLASSIFIER_MODE_CONFIGURE: {
-            /* Configures actor with specific features and weights */
+            cout << TAG << "invoke() MODE_CONFIGURE" << endl;
 
+            /* Configures actor with specific features and weights */
             // Checks if classifiers, weights vectors are non-empty
             if (this->classifiers.empty() || this->weights.empty()
                 || (this->classifiers.size() != this->weights.size())) {
-                mode = CLASSIFIER_MODE_READ;
-            } else {
-                cerr << "Error: classifiers and weights incorrectly configured.\n";
+                cerr << "classifier::invoke() Error: classifiers and weights incorrectly configured." << endl;
+                break;
             }
-
+            mode = CLASSIFIER_MODE_READ;
             break;
         }
 
         case CLASSIFIER_MODE_READ: {
+            cout << TAG << "invoke() MODE_READ" << endl;
+
             /* Reads in pointer to image subwindow*/
             ImageSubwindow *integralImage = nullptr;
             welt_c_fifo_read(input_port, &integralImage);
-            this->image = integralImage;
-            mode = CLASSIFIER_MODE_CLASSIFY;       
+            this->image = *integralImage;
+            cout << TAG << "invoke() imageAddress: " << this->image.image << endl;
+            cout << TAG << "invoke() reject: " << this->image.reject << endl;
+
+            mode = CLASSIFIER_MODE_CLASSIFY;
             break;
         }
 
         case CLASSIFIER_MODE_CLASSIFY: {
-            // If null, do not classify
-            if (image == nullptr) {
-                mode = CLASSIFIER_MODE_FALSE;
+            cout << TAG << "invoke() MODE_CLASSIFY" << endl;
+            // If reject flag, do not classify
+            if (image.reject) {
+                mode = CLASSIFIER_MODE_CONTINUE;
                 break;
             }
 
@@ -86,9 +98,11 @@ void classifier::invoke() {
 
             // Perform classification using each of the classifiers
             for (int i = 0; i < classifiers.size(); i++) {
-                isFace = classifiers[i].classifyImage(*(this->image)); // 1 if true, 0 if false
+                isFace = classifiers[i].classifyImage(this->image); // 1 if true, 0 if false
                 weightedClassify += isFace * weights[i];
             }
+
+            cout << TAG << "invoke() weightedClassify: " << weightedClassify << endl;
 
             // Sum weights
             float sumWeights = 0;
@@ -96,33 +110,32 @@ void classifier::invoke() {
                 sumWeights += weight;
             }
 
+            cout << TAG << "invoke() sumWeights: " << sumWeights << endl;
+
             // Threshold check using weights
-    	    if (weightedClassify >= 0.5 * sumWeights) { // final strong classifier: SUM(alpha_t * h_t) >= 1/2 *(SUM(alpha_t)), alpha_t = log(1/beta_t)
-                mode = CLASSIFIER_MODE_TRUE;
-            } else {
-                mode = CLASSIFIER_MODE_FALSE;
+    	    if (weightedClassify < 0.5 * sumWeights) { // final strong classifier: SUM(alpha_t * h_t) >= 1/2 *(SUM(alpha_t)), alpha_t = log(1/beta_t)
+                cout << TAG << "invoke() rejecting based on classification. " << endl;
+                this->image.reject = true;
             }
-            
+
+            mode = CLASSIFIER_MODE_CONTINUE;
             break;
         }
         
-        case CLASSIFIER_MODE_FALSE: {
-            /* Write copy of subwindow input to abort */
-	        welt_c_fifo_write(continue_port, nullptr);
+        case CLASSIFIER_MODE_CONTINUE: {
+            cout << TAG << "invoke() MODE_CONTINUE" << endl;
+            /* Write copy of subwindow input to continue */
+	        welt_c_fifo_write(continue_port, &(this->image));
             mode = CLASSIFIER_MODE_READ;
             break;
         }
 
-        case CLASSIFIER_MODE_TRUE: {
-            /* Write copy of subwindow input to continue */
-	       welt_c_fifo_write(continue_port, this->image);
-	       mode = CLASSIFIER_MODE_READ;
-	       break;
-        }
-
         default:
+        cout << TAG << "invoke() default" << endl;
             break;
     }
+
+    cout << TAG << "invoke() EXIT" << endl;
 }
 
 void classifier::reset() {

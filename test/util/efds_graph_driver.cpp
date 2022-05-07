@@ -31,7 +31,9 @@ istream &readClassifier(istream &input, WeakClassifier &classifier) {
 			featureType = FOUR_RECTANGLE;
 			break;
 		default:
-			cerr << "efds_graph_driver.exe error: Feature Type is invalid.\n";
+			// Goes here when attempting to read from the end of file.
+			// Classfier will be discarded.
+			featureType = VERTICAL_LINE;
 			break;
 	}
 
@@ -97,11 +99,15 @@ int main(int argc, char **argv) {
 		
 		// Append classifiers and weights to the vector
 		classifiers.push_back(strongClassifier);
+		weights.push_back(strongWeights);
 		
 		// Close and reset input file
 		classifierInput.close();
 		classifierInput.clear();
 	}
+
+	// Print size of classifiers
+	cout << "efds_graph_driver.exe: Number of classifiers: " << classifiers.size() << endl;
 
 	// Get all image names and store in a vector
 	ifstream imageIndexInput(imageSelect);
@@ -115,6 +121,8 @@ int main(int argc, char **argv) {
 	while (imageIndexInput >> imageIndex) {
 		imageIndices.push_back(imageIndex);
 	}
+
+	cout << "efds_graph_driver.exe: Number of images to classify: " << imageIndices.size() << endl;
 
     efds_graph *efds_graph_instance = new efds_graph(classifiers, weights, imageDir, imageIndices, output);
     /* Execute the graph. */

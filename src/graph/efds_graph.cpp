@@ -14,13 +14,15 @@
 #define IMAGE_WIDTH     24
 #define IMAGE_HEIGHT    24
 
+#define IMAGE_FILENAME_LENGTH 4
+
 using namespace std;
 
 // constructor
 efds_graph::efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector<float>> weights, 
         string imageDir, vector<int> imageIndices, 
         string output) {
-
+    cout << "efds_graph() ENTER" << endl;
     this->imageDir = imageDir;
     this->imageIndices = imageIndices;
 
@@ -46,6 +48,9 @@ efds_graph::efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector
 
     int fifoIndex = FIFO_II_CLAS;
     this->numClassifierActors = min((int)classifiers.size(), MAX_CLASSIFIERS);
+
+    cout << "efds_graph: Number of Classifier Actors: " << numClassifierActors << endl;
+
     for (int i = 0; i < numClassifierActors; i++) {
         actors.push_back(new classifier(fifos[fifoIndex], fifos[fifoIndex + 1],
                 classifiers[i], weights[i]));
@@ -59,26 +64,60 @@ efds_graph::efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector
     /* following two members are initialized but never used */
     actor_count = ACTOR_COUNT;
     fifo_count = FIFO_COUNT;
+
+    cout << "efds_graph() EXIT" << endl;
 }
 
 void efds_graph::scheduler() {
+    cout << "efds_graph::scheduler() ENTER" << endl;
+
+    // "Configure" classify actors
+    for (int i = 1; i <= numClassifierActors; i++) {
+        if (actors[ACTOR_INTEGR_IMG + i]->enable()) {
+            actors[ACTOR_INTEGR_IMG + i]->invoke();
+        }
+    }
+
+
     // Iterate through all the images
     string imageFileName;
     for (auto &imageIndex: this->imageIndices) {
-        imageFileName = this->imageDir + to_string(imageIndex);
+        // Get image index as string and zero pad it.
+        string imageFile = to_string(imageIndex);
+        imageFile.insert(imageFile.begin(), IMAGE_FILENAME_LENGTH - imageFile.length(), '0');
+        imageFileName = this->imageDir + imageFile + ".txt";
+
+        cout << "efds_graph::scheduler() imageFileName: " << imageFileName << endl;
         imageRead->setFileName((char*) imageFileName.c_str());
 
         if (imageRead->enable()) {
+            cout << "efds_graph::scheduler() imageRead enabled. Reading.." << endl;
             imageRead->invoke();
         }
 
-        // Integrate Image, Run through Classifiers, and write results
-        for (int i = 0; i < numClassifierActors + 2; i++) {
-            if (actors[ACTOR_INTEGR_IMG + i]->enable()) {
-                actors[ACTOR_INTEGR_IMG + i]->invoke();
+        // Integrate Image
+        if (actors[ACTOR_INTEGR_IMG]->enable()) {
+            actors[ACTOR_INTEGR_IMG]->invoke();
+        }
+
+        // Run through Classifiers,
+        for (int i = 1; i <= numClassifierActors; i++) {
+            // Read, classify, and write result to next actor
+            for (int j = 0; j < 3; j++) {
+                if (actors[ACTOR_INTEGR_IMG + i]->enable()) {
+                    actors[ACTOR_INTEGR_IMG + i]->invoke();
+                } 
             }
         }
+
+        // Write results
+        if (actors[ACTOR_INTEGR_IMG + numClassifierActors + 1]->enable()) {
+            actors[ACTOR_INTEGR_IMG + numClassifierActors + 1]->invoke();
+        }
+
     }
+
+    cout << "efds_graph::scheduler() EXIT" << endl;
 }
 
 efds_graph::~efds_graph() {

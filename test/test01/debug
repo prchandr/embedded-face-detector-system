@@ -1,0 +1,1 @@
+gdb --args ./../util/efds_graph_driver.exe ../test01/classifiers/ ../test01/classifierSelect.txt ../test01/images/ ../test01/imageSelect.txt ../test01/results.txt

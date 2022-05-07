@@ -3,6 +3,8 @@
 
 #define MAX_FIFO_COUNT 2
 
+#define TAG "integrateImage::"
+
 using namespace std;
 
 integrateImage::integrateImage(welt_c_fifo_pointer input, welt_c_fifo_pointer output) {
@@ -14,6 +16,7 @@ integrateImage::integrateImage(welt_c_fifo_pointer input, welt_c_fifo_pointer ou
 }
 
 bool integrateImage::enable() {
+    cout << TAG << "enable() ENTER" << endl;
     bool result = false;
     switch (mode) {
         case II_MODE_INTEGRATE:
@@ -25,16 +28,18 @@ bool integrateImage::enable() {
         default:
             break;
     }
+    cout << TAG << "enable() EXIT result: " << result << endl;
     return result;   
 }
 
 void integrateImage::invoke() {
+    cout << TAG << "invoke() ENTER" << endl;
     // Read in vec<vec<int>> image from pointer
     vector<vector<int>> *img = nullptr;
     welt_c_fifo_read(input, &img);
 
     if (img == nullptr) {
-        cerr << "Error: image pointer received is null.\n";
+        cerr << TAG << "invoke() Error: image pointer received is null.\n";
         return;
     }
 
@@ -47,9 +52,16 @@ void integrateImage::invoke() {
 	this->integralImage.image = &(this->image);
 	this->integralImage.startRow = 0;
     this->integralImage.startCol = 0; 
+    this->integralImage.reject = false;
 
-    // Write to pointer
-	welt_c_fifo_write(output, &(this->integralImage));	
+    cout << TAG << "invoke() integralImageAddress: " << &(this->integralImage) << endl;
+    cout << TAG << "invoke() imageAddress: " << this->integralImage.image << endl;
+    cout << TAG << "invoke() reject: " << this->integralImage.reject << " startRow: " << this->integralImage.startRow << " startCol: " << this->integralImage.startCol << endl;
+
+    // Write to fifo
+    auto ptr_token = &(this->integralImage);
+    welt_c_fifo_write(this->output, &ptr_token);
+    cout << TAG << "invoke() EXIT" << endl;
 	
 }
 
@@ -77,6 +89,7 @@ integrateImage::~integrateImage() {
 
 // Integrates an image. 
 void integrateImage::integrate(vector<vector<int>> &image) {
+    cout << TAG << "integrate() ENTER" << endl;
     // Sum first row
     for (int i = 1; i < image.size(); i++) {
         image[0][i] += image[0][i - 1];
@@ -93,4 +106,5 @@ void integrateImage::integrate(vector<vector<int>> &image) {
             image[i][j] += image[i - 1][j] + image[i][j - 1] - image[i - 1][j - 1];
         }
     }
+    cout << TAG << "integrate() EXIT" << endl;
 }

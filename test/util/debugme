@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
+
+################################################################################
+# @ddblock_begin copyright
 #
-# Copyright (c) 1997-2021
+# Copyright (c) 1997-2022
 # Maryland DSPCAD Research Group, The University of Maryland at College Park 
 #
 # Permission is hereby granted, without written agreement and without
@@ -22,15 +25,12 @@
 # MARYLAND HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,
 # ENHANCEMENTS, OR MODIFICATIONS.
 #
+# @ddblock_end copyright
+################################################################################
 
+rm -rf Debug
+mkdir Debug
+cd Debug
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+make install
 
-
-# Script to build the executable for this test
-# Usage: makeme [no arguments]
-
-# [FIXME: complete this script, this is just a template]
-cd ../../src/
-./debugme
-
-cd ../test/util/
-./debugme

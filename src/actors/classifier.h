@@ -42,8 +42,7 @@ True - Does not consume any tokens. Produces a copy of the PTIS token.
 #define CLASSIFIER_MODE_CONFIGURE   1
 #define CLASSIFIER_MODE_READ        2    
 #define CLASSIFIER_MODE_CLASSIFY    3
-#define CLASSIFIER_MODE_FALSE       4
-#define CLASSIFIER_MODE_TRUE        5
+#define CLASSIFIER_MODE_CONTINUE    4
 
 class classifier : public welt_cpp_actor{
 public:
@@ -64,7 +63,7 @@ private:
     /* Inner parameters */
     vector<WeakClassifier> classifiers;
     vector<float> weights;
-    ImageSubwindow *image;
+    ImageSubwindow image;
 
     /* FIFO pointers */
     welt_c_fifo_pointer input_port;

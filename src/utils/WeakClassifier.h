@@ -1,7 +1,7 @@
 #ifndef weak_classifier_h
 #define weak_classifier_h
 
-#include <fstream>
+
 #include "ImageSubwindow.h"
 #include "FeatureType.h"
 

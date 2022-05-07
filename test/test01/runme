@@ -27,5 +27,5 @@
 # Script to run this test
 # Usage: runme classifiers_dir classifiers_file images_dir images_file output
 
-./runme_generic ../test01/classifiers/ ../test01/classifierSelect.txt ../test01/images/ ../test01/imageSelect.txt ../test01/results.txt
-
+./runme_generic ../test01/classifiers/ ../test01/classifierSelect.txt ../test01/images/ ../test01/imageSelect.txt ../test01/results.txt > diagnostics.txt
+diff results.txt expected-output.txt

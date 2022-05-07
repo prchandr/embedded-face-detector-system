@@ -5,6 +5,8 @@
 
 #define MAX_FIFO_COUNT 1
 
+#define TAG "file_write_results::"
+
 using namespace std;
 
 file_write_results::file_write_results(welt_c_fifo_pointer input_in, string output_filename) {
@@ -16,6 +18,7 @@ file_write_results::file_write_results(welt_c_fifo_pointer input_in, string outp
 }
 
 bool file_write_results::enable() {
+    cout << TAG << "enable() ENTER" << endl;
     bool result = false;
     switch (mode) {
         case FILE_WRITE_PROCESS:
@@ -30,18 +33,26 @@ bool file_write_results::enable() {
             result = false;
             break;
     }
+
+    cout << TAG << "enable() EXIT result: " << result << endl;
     return result;
 }
 
 void file_write_results::invoke() {
+    cout << TAG << "invoke() ENTER" << endl;
     switch (mode) {
         case FILE_WRITE_PROCESS: {
+            cout << TAG << "invoke() FILE_WRITE_PROCESS" << endl;
             resultCounter++;
             ImageSubwindow *image;
     	    welt_c_fifo_read(this->input_port, &image);
 
+            if (image == nullptr) {
+                break;
+            }
+
             string result;
-    	    if (image == nullptr){
+    	    if (image->reject){
                 result = "NF";
             } else {
                 result = "F";
@@ -63,8 +74,9 @@ void file_write_results::invoke() {
         }
 
         case FILE_WRITE_ERROR: {
-	       /* Remain in the same mode, do nothing */
-	       mode = FILE_WRITE_ERROR;
+            cout << TAG << "invoke() FILE_WRITE_ERRO" << endl;
+            /* Remain in the same mode, do nothing */
+            mode = FILE_WRITE_ERROR;
             break;
         }
 
@@ -72,6 +84,7 @@ void file_write_results::invoke() {
             mode = FILE_WRITE_ERROR;
             break;
     }
+    cout << TAG << "invoke() EXIT" << endl;
 }
 
 void file_write_results::reset() {

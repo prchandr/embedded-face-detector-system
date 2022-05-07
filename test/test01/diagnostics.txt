@@ -1,0 +1,53 @@
+(24, 24)
+efds_graph_driver.exe: Reading from file: ../test01/classifiers/classifier_0.txt
+efds_graph_driver.exe: Number of classifiers: 1
+efds_graph_driver.exe: Number of images to classify: 1
+efds_graph() ENTER
+efds_graph: Number of Classifier Actors: 1
+efds_graph() EXIT
+efds_graph::scheduler() ENTER
+classifier::enable() ENTER
+classifier::enable() EXIT result: 1
+classifier::invoke() ENTER
+classifier::invoke() MODE_CONFIGURE
+classifier::invoke() EXIT
+efds_graph::scheduler() imageFileName: ../test01/images/0001.txt
+efds_graph::scheduler() imageRead enabled. Reading..
+integrateImage::enable() ENTER
+integrateImage::enable() EXIT result: 1
+integrateImage::invoke() ENTER
+integrateImage::integrate() ENTER
+integrateImage::integrate() EXIT
+integrateImage::invoke() integralImageAddress: 0x555565879788
+integrateImage::invoke() imageAddress: 0x555565879770
+integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
+integrateImage::invoke() EXIT
+classifier::enable() ENTER
+classifier::enable() EXIT result: 1
+classifier::invoke() ENTER
+classifier::invoke() MODE_READ
+classifier::invoke() imageAddress: 0x555565879770
+classifier::invoke() reject: 0
+classifier::invoke() EXIT
+classifier::enable() ENTER
+classifier::enable() EXIT result: 1
+classifier::invoke() ENTER
+classifier::invoke() MODE_CLASSIFY
+WeakClassifier::classifyImage() ENTER
+WeakClassifier::classifyImage() result: -2258
+WeakClassifier::classifyImage() EXIT
+classifier::invoke() weightedClassify: 1
+classifier::invoke() sumWeights: 1
+classifier::invoke() EXIT
+classifier::enable() ENTER
+classifier::enable() EXIT result: 1
+classifier::invoke() ENTER
+classifier::invoke() MODE_CONTINUE
+classifier::invoke() EXIT
+file_write_results::enable() ENTER
+file_write_results::enable() EXIT result: 1
+file_write_results::invoke() ENTER
+file_write_results::invoke() FILE_WRITE_PROCESS
+file_write_results::invoke() EXIT
+efds_graph::scheduler() EXIT
+1 NF

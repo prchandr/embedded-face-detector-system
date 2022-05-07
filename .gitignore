@@ -36,8 +36,7 @@ project-dataset/
 
 # Weak classifiers and features
 wc_*.txt
-feat_*.txt
 
-
-# Build directorys
+# Build directories
 **/build/
+**/Debug/

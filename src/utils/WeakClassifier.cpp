@@ -3,7 +3,10 @@
 #include "ImageSubwindow.h"
 #include "FeatureType.h"
 
+#include <iostream>
 #include <vector>
+
+#define TAG "WeakClassifier::"
 
 using namespace std;
 
@@ -47,7 +50,9 @@ void WeakClassifier::setClassifyParams(int polarity, int threshold) {
 	this->threshold = threshold;
 }
 
-bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
+bool WeakClassifier::classifyImage(ImageSubwindow integral_image) {
+	cout << TAG << "classifyImage() ENTER" << endl;
+
 	int pos, neg;
     vector<vector<int>> &img = *integral_image.image;
 
@@ -247,14 +252,8 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image){
 			break;
 	}
 
-	//update the polarity based on feature values
-	if (pos - neg < 0) {
-		polarity = -1;
-	}
-	else {
-		polarity = 1;
-	}
-	
+	cout << TAG << "classifyImage() result: " << (pos - neg) << endl;
+	cout << TAG << "classifyImage() EXIT" << endl;
 	return (polarity * (pos - neg) < polarity * threshold);
 }
 

@@ -6,6 +6,7 @@
 struct ImageSubwindow {
 	std::vector<std::vector<int>> *image;
 	int startRow, startCol;
+	bool reject = false;
 };
 
 #endif
