@@ -28,7 +28,7 @@ public:
 	int getColStart();
 	int getThreshold();
 	int getPolarity();
-	int getSumResult();
+	int getResultSum();
 
 	// Setters for private variables
 	void setFeatureType(FeatureType feature);
@@ -42,8 +42,7 @@ private:
 	int startRow, startCol;
 	int threshold;
 	int polarity;
-	int sumResult;
-
+	int resultSum;
 	
 };
 

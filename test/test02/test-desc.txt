@@ -24,8 +24,7 @@ ENHANCEMENTS, OR MODIFICATIONS.
 
 
 A basic test of the classifier using a single feature and a single image.
-These are located within the test case in the classifiers directory
-and the images directory.
-
+The classifiers are located in the ../../classifiers/strong directory,
+and the images are from the training directory in the project-dataset.
 
 @author Prem Chandrasekhar.

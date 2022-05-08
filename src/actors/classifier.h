@@ -17,6 +17,7 @@ extern "C" {
 #include "../utils/ImageSubwindow.h"
 
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -32,11 +33,9 @@ classify, otherwise it is transitioned to false.
 
 Classify - Operates on the image subwindow W in the token consumed in the 
 previous firing. VJ algorithm is used to determine whether W has a face. If W 
-is rejected, it is transitioned to false. Otherwise, it is transitioned to true
+is rejected, the PTIS is toggled to reject. Otherwise, nothing is changed.
 
-False - Does not consume any tokens. Produces a null pointer token.
-
-True - Does not consume any tokens. Produces a copy of the PTIS token.
+Continue - Sends the PTIS token to the next actor.
 
 *******************************************************************************/
 #define CLASSIFIER_MODE_CONFIGURE   1
@@ -48,7 +47,9 @@ class classifier : public welt_cpp_actor{
 public:
     classifier(welt_c_fifo_pointer input_in, 
             welt_c_fifo_pointer continue_out,
-            vector<WeakClassifier> classifiers, vector<float> weights);
+            vector<WeakClassifier> classifiers, vector<float> weights,
+            string fileOutName);
+
     ~classifier() override;
 
     bool enable() override;
@@ -64,6 +65,9 @@ private:
     vector<WeakClassifier> classifiers;
     vector<float> weights;
     ImageSubwindow image;
+
+    vector<int> classifierResults;
+    string resultSumFilename;
 
     /* FIFO pointers */
     welt_c_fifo_pointer input_port;

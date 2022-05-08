@@ -10,6 +10,9 @@
 
 using namespace std;
 
+/* Constructors */
+
+// Empty constructor, default values
 WeakClassifier::WeakClassifier() {
 	this->feature = VERTICAL_EDGE;
 	this->width = 0;
@@ -18,7 +21,7 @@ WeakClassifier::WeakClassifier() {
 	this->startCol = 0;
 	this->threshold = 0;
 	this->polarity = 0;
-	this->sumResult = 0;
+	this->resultSum = 0;
 }
 
 WeakClassifier::WeakClassifier(FeatureType feature, int width, int height,
@@ -30,30 +33,12 @@ WeakClassifier::WeakClassifier(FeatureType feature, int width, int height,
 	this->startCol = startCol;
 	this->threshold = threshold;
 	this->polarity = polarity;
-	this->sumResult = 0;
+	this->resultSum = 0;
 }
 
-void WeakClassifier::setFeatureType(FeatureType feature) {
-	this->feature = feature;
-}
-
-void WeakClassifier::setDimensions(int width, int height) {
-	this->width = width;
-	this->height = height;
-}
-
-void WeakClassifier::setStartCoords(int startRow, int startCol) {
-	this->startRow = startRow;
-	this->startCol = startCol;
-}
-	
-void WeakClassifier::setClassifyParams(int polarity, int threshold) {
-	this->polarity = polarity;
-	this->threshold = threshold;
-}
-
+/* Classifies a given integral image based on the configured weak classifier */
 bool WeakClassifier::classifyImage(ImageSubwindow integral_image) {
-	cout << TAG << "classifyImage() ENTER" << endl;
+	cout << TAG << "classifyImage() ENTER\n";
 
 	int pos, neg;
     vector<vector<int>> &img = *integral_image.image;
@@ -253,9 +238,36 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image) {
 		default:
 			break;
 	}
-	this->sumResult = pos - neg;
-	cout << TAG << "classifyImage() result: " << this->sumResult << endl;
-	cout << TAG << "classifyImage() EXIT" << endl;
-	return (this->polarity * (this->sumResult) < (this->polarity * this->threshold));
+	this->resultSum = pos - neg;
+	cout << TAG << "classifyImage() result: " << this->resultSum << '\n';
+	cout << TAG << "classifyImage() EXIT\n";
+	return (this->polarity * (this->resultSum) < (this->polarity * this->threshold));
 }
+
+
+/* Getters. (Most left unimplemented since they are unused) */
+int WeakClassifier::getResultSum() {
+	return this->resultSum;
+}
+
+/* Setters */
+void WeakClassifier::setFeatureType(FeatureType feature) {
+	this->feature = feature;
+}
+
+void WeakClassifier::setDimensions(int width, int height) {
+	this->width = width;
+	this->height = height;
+}
+
+void WeakClassifier::setStartCoords(int startRow, int startCol) {
+	this->startRow = startRow;
+	this->startCol = startCol;
+}
+	
+void WeakClassifier::setClassifyParams(int polarity, int threshold) {
+	this->polarity = polarity;
+	this->threshold = threshold;
+}
+
 

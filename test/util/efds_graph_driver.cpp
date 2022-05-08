@@ -45,11 +45,12 @@ istream &readClassifier(istream &input, WeakClassifier &classifier) {
 }
 
 int main(int argc, char **argv) {
-    string classifierDir, classifierSelect, imageDir, imageSelect, output;
-	int arg_count = 6; /* driver classifierDirectory classifierSelect imageDirectory imageSelect outputFile */
+    string classifierDir, classifierSelect, imageDir, imageSelect, output, classifierResults;
+	int arg_count = 6; /* driver classifierDirectory classifierSelect imageDirectory imageSelect outputFile [classifierResults] */
+    int optional_args = 1;
 
     /* Check program usage. */
-    if (argc != arg_count) {
+    if (argc != arg_count && argc != arg_count + optional_args) {
 		cerr << "efds_graph_driver.exe error: arg count invalid\n";
         return 1;
     }
@@ -61,6 +62,11 @@ int main(int argc, char **argv) {
     imageDir = argv[++i];
 	imageSelect = argv[++i];
 	output = argv[++i];
+
+	/* Optional argument for classifierResults */
+	if (argc != arg_count) {
+		classifierResults = argv[++i];
+	}
 
 	/* Configure classifier actors */
 	ifstream classifierConfigInput(classifierSelect);
@@ -86,7 +92,7 @@ int main(int argc, char **argv) {
 	while (classifierConfigInput >> classifierIndex) {
 		// Obtain filenames for strong classifier file
 		strongFileName = classifierDir + "classifier_" + to_string(classifierIndex) + ".txt";
-		cout << "efds_graph_driver.exe: Reading from file: "  << strongFileName << endl;
+		cout << "efds_graph_driver.exe: Reading from file: "  << strongFileName << "\n";
 
 		// Get all weak classifiers and weights in strong classifier file
 		classifierInput.open(strongFileName);
@@ -107,7 +113,7 @@ int main(int argc, char **argv) {
 	}
 
 	// Print size of classifiers
-	cout << "efds_graph_driver.exe: Number of classifiers: " << classifiers.size() << endl;
+	cout << "efds_graph_driver.exe: Number of classifiers: " << classifiers.size() << "\n";
 
 	// Get all image names and store in a vector
 	ifstream imageIndexInput(imageSelect);
@@ -122,9 +128,8 @@ int main(int argc, char **argv) {
 		imageIndices.push_back(imageIndex);
 	}
 
-	cout << "efds_graph_driver.exe: Number of images to classify: " << imageIndices.size() << endl;
-
-    efds_graph *efds_graph_instance = new efds_graph(classifiers, weights, imageDir, imageIndices, output);
+	cout << "efds_graph_driver.exe: Number of images to classify: " << imageIndices.size() << "\n";
+    efds_graph *efds_graph_instance = new efds_graph(classifiers, weights, imageDir, imageIndices, output, classifierResults);
     /* Execute the graph. */
     efds_graph_instance->scheduler();
 

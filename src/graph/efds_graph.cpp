@@ -16,15 +16,18 @@
 
 #define IMAGE_FILENAME_LENGTH 4
 
+#define TAG "efds_graph::"
+
 using namespace std;
 
 // constructor
 efds_graph::efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector<float>> weights, 
         string imageDir, vector<int> imageIndices, 
-        string output) {
-    cout << "efds_graph() ENTER" << endl;
+        string output, string classifierResultOut = "") {
+    cout << TAG << "efds_graph() ENTER\n";
     this->imageDir = imageDir;
     this->imageIndices = imageIndices;
+    this->classifiersResultsFilename = classifierResultOut;
 
     /* Initialize fifos to have a size of a pointer. */
     int token_size = sizeof(ImageSubwindow*);
@@ -49,11 +52,15 @@ efds_graph::efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector
     int fifoIndex = FIFO_II_CLAS;
     this->numClassifierActors = min((int)classifiers.size(), MAX_CLASSIFIERS);
 
-    cout << "efds_graph: Number of Classifier Actors: " << numClassifierActors << endl;
+    cout << TAG << "efds_graph(): Number of Classifier Actors: " << numClassifierActors << "\n";
+
+    if (!this->classifiersResultsFilename.empty()) {
+        cout << TAG "efds_graph(): writing classifier results to file: " << this->classifiersResultsFilename << "\n";       
+    }
 
     for (int i = 0; i < numClassifierActors; i++) {
         actors.push_back(new classifier(fifos[fifoIndex], fifos[fifoIndex + 1],
-                classifiers[i], weights[i]));
+                classifiers[i], weights[i], this->classifiersResultsFilename));
         descriptors.push_back((char*)"actor strong classifier");
         fifoIndex++;
     }
@@ -65,11 +72,11 @@ efds_graph::efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector
     actor_count = ACTOR_COUNT;
     fifo_count = FIFO_COUNT;
 
-    cout << "efds_graph() EXIT" << endl;
+    cout << TAG << "efds_graph() EXIT\n";
 }
 
 void efds_graph::scheduler() {
-    cout << "efds_graph::scheduler() ENTER" << endl;
+    cout << TAG << "scheduler() ENTER\n";
 
     // "Configure" classify actors
     for (int i = 1; i <= numClassifierActors; i++) {
@@ -87,11 +94,11 @@ void efds_graph::scheduler() {
         imageFile.insert(imageFile.begin(), IMAGE_FILENAME_LENGTH - imageFile.length(), '0');
         imageFileName = this->imageDir + imageFile + ".txt";
 
-        cout << "efds_graph::scheduler() imageFileName: " << imageFileName << endl;
+        cout << TAG << "scheduler() imageFileName: " << imageFileName << "\n";
         imageRead->setFileName((char*) imageFileName.c_str());
 
         if (imageRead->enable()) {
-            cout << "efds_graph::scheduler() imageRead enabled. Reading.." << endl;
+            cout << TAG << "scheduler() imageRead enabled. Reading..\n";
             imageRead->invoke();
         }
 
@@ -117,9 +124,9 @@ void efds_graph::scheduler() {
 
     }
 
-    cout << "efds_graph::scheduler() EXIT" << endl;
+    cout << TAG << "scheduler() EXIT\n";
 }
 
 efds_graph::~efds_graph() {
-    cout << "delete efds graph" << endl;
+    cout << "delete efds graph\n";
 }

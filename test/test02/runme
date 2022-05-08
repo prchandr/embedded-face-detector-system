@@ -25,7 +25,8 @@
 
 
 # Script to run this test
-# Usage: runme
+# Usage: runme classifiers_dir classifiers_file images_dir images_file output
 
-./runme_generic classifiers/ classifierSelect.txt images/ imageSelect.txt results.txt > diagnostics.txt
+
+./runme_generic ../../classifiers/strong/ classifierSelect.txt ../../project-dataset/training/face/ imageSelect.txt results.txt > diagnostics.txt
 diff results.txt expected-output.txt

@@ -16,7 +16,7 @@ integrateImage::integrateImage(welt_c_fifo_pointer input, welt_c_fifo_pointer ou
 }
 
 bool integrateImage::enable() {
-    cout << TAG << "enable() ENTER" << endl;
+    cout << TAG << "enable() ENTER\n";
     bool result = false;
     switch (mode) {
         case II_MODE_INTEGRATE:
@@ -28,12 +28,12 @@ bool integrateImage::enable() {
         default:
             break;
     }
-    cout << TAG << "enable() EXIT result: " << result << endl;
+    cout << TAG << "enable() EXIT result: " << result << "\n";
     return result;   
 }
 
 void integrateImage::invoke() {
-    cout << TAG << "invoke() ENTER" << endl;
+    cout << TAG << "invoke() ENTER\n";
     // Read in vec<vec<int>> image from pointer
     vector<vector<int>> *img = nullptr;
     welt_c_fifo_read(input, &img);
@@ -54,14 +54,14 @@ void integrateImage::invoke() {
     this->integralImage.startCol = 0; 
     this->integralImage.reject = false;
 
-    cout << TAG << "invoke() integralImageAddress: " << &(this->integralImage) << endl;
-    cout << TAG << "invoke() imageAddress: " << this->integralImage.image << endl;
-    cout << TAG << "invoke() reject: " << this->integralImage.reject << " startRow: " << this->integralImage.startRow << " startCol: " << this->integralImage.startCol << endl;
+    cout << TAG << "invoke() integralImageAddress: " << &(this->integralImage) << "\n";
+    cout << TAG << "invoke() imageAddress: " << this->integralImage.image << "\n";
+    cout << TAG << "invoke() reject: " << this->integralImage.reject << " startRow: " << this->integralImage.startRow << " startCol: " << this->integralImage.startCol << "\n";
 
     // Write to fifo
     auto ptr_token = &(this->integralImage);
     welt_c_fifo_write(this->output, &ptr_token);
-    cout << TAG << "invoke() EXIT" << endl;
+    cout << TAG << "invoke() EXIT\n";
 	
 }
 
@@ -84,12 +84,12 @@ void integrateImage::connect(welt_cpp_graph *graph) {
 }
 
 integrateImage::~integrateImage() {
-    cout << "delete integrateImage actor" << endl;
+    cout << "delete integrateImage actor\n";
 }
 
 // Integrates an image. 
 void integrateImage::integrate(vector<vector<int>> &image) {
-    cout << TAG << "integrate() ENTER" << endl;
+    cout << TAG << "integrate() ENTER\n";
     // Sum first row
     for (int i = 1; i < image.size(); i++) {
         image[0][i] += image[0][i - 1];
@@ -106,5 +106,5 @@ void integrateImage::integrate(vector<vector<int>> &image) {
             image[i][j] += image[i - 1][j] + image[i][j - 1] - image[i - 1][j - 1];
         }
     }
-    cout << TAG << "integrate() EXIT" << endl;
+    cout << TAG << "integrate() EXIT\n";
 }

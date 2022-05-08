@@ -44,6 +44,10 @@ public:
         string imageDir, vector<int> imageIndices, 
         string output);
 
+    efds_graph(vector<vector<WeakClassifier>> classifiers, vector<vector<float>> weights, 
+        string imageDir, vector<int> imageIndices, 
+        string output, string classifierResultOut);
+
     ~efds_graph();
 
     /* Scheduler for this graph */
@@ -54,6 +58,7 @@ private:
     vector<int> imageIndices;
     int numClassifierActors;
     txt_img_read *imageRead;
+    string classifiersResultsFilename;
 };
 
 #endif

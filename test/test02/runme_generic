@@ -25,7 +25,50 @@
 
 
 # Script to run this test
-# Usage: runme
+# Usage: runme_generic classifiers_dir classifiers_file images_dir images_file output
 
-./runme_generic classifiers/ classifierSelect.txt images/ imageSelect.txt results.txt > diagnostics.txt
-diff results.txt expected-output.txt
+# Variables
+digits=0000
+ARGCOUNT=5
+
+# Check if arg count is correct
+
+if [ $# -ne $ARGCOUNT ]
+then
+    echo "Error: Incorrect number of arguments. Expected: $ARGCOUNT, Recieved: $#"
+    echo "Usage: ./runme_generic classifiers_dir classifiers_file images_dir images_file output."
+    exit 1 
+fi
+
+# Directories and files
+CLASSIFIER_DIR=$1
+CLASSIFIER_FILE=$2 
+IMAGE_DIRECTORY=$3
+IMAGE_FILE=$4
+OUTPUT_FILE=$5
+CURRENT_DIRECTORY=$(pwd)
+
+# Run enee408mim2txt on each image file
+IMAGES=$(cat $IMAGE_FILE)
+cd $IMAGE_DIRECTORY
+for image in $IMAGES
+do
+    command="enee408mim2txt ${digits:${#image}:${#digits}}${image}.png grayscale"
+    eval $command
+done
+cd $CURRENT_DIRECTORY
+
+# Delete results file, if it exists
+rm -f $OUTPUT_FILE
+
+# Call driver program
+./../util/efds_graph_driver.exe $CLASSIFIER_DIR $CLASSIFIER_FILE $IMAGE_DIRECTORY $IMAGE_FILE $OUTPUT_FILE
+
+# Delete each generated txt file
+IMAGES=$(cat $IMAGE_FILE)
+cd $IMAGE_DIRECTORY
+for image in $IMAGES
+do
+    rm ${digits:${#image}:${#digits}}${image}.txt
+done
+cd $CURRENT_DIRECTORY

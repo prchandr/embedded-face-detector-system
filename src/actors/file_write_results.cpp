@@ -18,7 +18,7 @@ file_write_results::file_write_results(welt_c_fifo_pointer input_in, string outp
 }
 
 bool file_write_results::enable() {
-    cout << TAG << "enable() ENTER" << endl;
+    cout << TAG << "enable() ENTER\n";
     bool result = false;
     switch (mode) {
         case FILE_WRITE_PROCESS:
@@ -34,15 +34,15 @@ bool file_write_results::enable() {
             break;
     }
 
-    cout << TAG << "enable() EXIT result: " << result << endl;
+    cout << TAG << "enable() EXIT result: " << result << "\n";
     return result;
 }
 
 void file_write_results::invoke() {
-    cout << TAG << "invoke() ENTER" << endl;
+    cout << TAG << "invoke() ENTER\n";
     switch (mode) {
         case FILE_WRITE_PROCESS: {
-            cout << TAG << "invoke() FILE_WRITE_PROCESS" << endl;
+            cout << TAG << "invoke() FILE_WRITE_PROCESS\n";
             resultCounter++;
             ImageSubwindow *image;
     	    welt_c_fifo_read(this->input_port, &image);
@@ -63,18 +63,18 @@ void file_write_results::invoke() {
             outStream.open(this->outputFilename, ofstream::app);
 
             if (!outStream.is_open()) {
-                cerr << "Error: Unable to open output file: " << this->outputFilename << endl;
+                cerr << "Error: Unable to open output file: " << this->outputFilename << "\n";
                 mode = FILE_WRITE_ERROR;
                 break;
             }
 
-    	    outStream << resultCounter << " " << result << endl;
+    	    outStream << resultCounter << " " << result << "\n";
             outStream.close();
             break;
         }
 
         case FILE_WRITE_ERROR: {
-            cout << TAG << "invoke() FILE_WRITE_ERRO" << endl;
+            cout << TAG << "invoke() FILE_WRITE_ERRO\n";
             /* Remain in the same mode, do nothing */
             mode = FILE_WRITE_ERROR;
             break;
@@ -84,7 +84,7 @@ void file_write_results::invoke() {
             mode = FILE_WRITE_ERROR;
             break;
     }
-    cout << TAG << "invoke() EXIT" << endl;
+    cout << TAG << "invoke() EXIT\n";
 }
 
 void file_write_results::reset() {
@@ -101,6 +101,6 @@ void file_write_results::connect(welt_cpp_graph *graph) {
 }
 
 file_write_results::~file_write_results() {
-    cout << "delete file_write_results actor" << endl;
+    cout << "delete file_write_results actor\n";
 }
 
