@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+
+# Usage: ./runme [no arguments]
+
+# Read in all weak classifiers files, add weight, classify training images
+
+#  
+
+

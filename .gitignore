@@ -34,9 +34,13 @@
 # Dataset of Images
 project-dataset/
 
-# Weak classifiers and features
+# Weak classifiers
 wc_*.txt
 
 # Build directories
 **/build/
 **/Debug/
+
+# Diagnostic files
+**/diagnostics.txt
+
