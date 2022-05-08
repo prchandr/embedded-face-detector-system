@@ -44,7 +44,7 @@ istream &readClassifier(istream &input, WeakClassifier &classifier) {
 	return input;
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char *argv[]) {
     string classifierDir, classifierSelect, imageDir, imageSelect, output, classifierResults;
 	int arg_count = 6; /* driver classifierDirectory classifierSelect imageDirectory imageSelect outputFile [classifierResults] */
     int optional_args = 1;
