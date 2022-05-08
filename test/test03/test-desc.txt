@@ -28,4 +28,6 @@ A test of the classifier using a single feature and multiple images. Uses first
 
 imageSelect.txt is created automatically.
 
+The outputs of each weak classifier is saved in the classifierOutput.txt file.
+
 @author Prem Chandrasekhar.
