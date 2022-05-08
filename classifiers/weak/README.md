@@ -1,5 +1,5 @@
 ## Weak Classifiers Files
-This directory holds the files describing each weak classifier. The name of the file should be `weak_XX.txt`, where XX is the index starting at 0.
+This directory holds the files describing each weak classifier. The name of the file should be `wc_XX.txt`, where XX is the index starting at 0.
 
 The format of the file is as shown below.
 ```
