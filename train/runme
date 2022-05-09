@@ -1,10 +1,40 @@
 #!/usr/bin/env bash
 #
 
-# Usage: ./runme [no arguments]
+# Usage: ./runme weakClassifierDir trainImagesDir [iterations]
 
-# Read in all weak classifiers files, add weight, classify training images
+# Variables
+digits=0000
+ARGCOUNT=2
+OPTIONAL_ARGS=1
+DEFAULT_ITERATIONS=100
 
-#  
+# Check if arg count is correct
+if [ $# -ne $ARGCOUNT ] && [ $# -ne $(($ARGCOUNT + $OPTIONAL_ARGS)) ] 
+then
+    echo "Error: Incorrect number of arguments. Expected: $ARGCOUNT, Recieved: $#"
+    echo "Usage: ./runme weakClassifierDir trainImagesDir [iterations]"
+    exit 1 
+fi
+
+# Directories and files
+WEAK_CLASSIFIERS_DIR=$1
+IMAGES_DIR=$2 
+ITERATIONS=${6:-$DEFAULT_ITERATIONS}
+CURRENT_DIRECTORY=$(pwd)
+
+# Read in all weak classifiers files, add weight of 1 to file for "strong" classifier
+
+	# Perform classification on training images, store resultSum files
+
+
+# Get filename for strong classifier
+
+
+# Call Adaboost training
+
+
+
+
 
 

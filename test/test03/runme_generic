@@ -23,7 +23,6 @@
 # ENHANCEMENTS, OR MODIFICATIONS.
 #
 
-
 # Script to run this test
 # Usage: runme classifiers_dir classifiers_file images_dir images_file
 
