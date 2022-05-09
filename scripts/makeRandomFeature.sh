@@ -7,13 +7,14 @@ IMAGE_MAX_HEIGHT=24
 
 DEFAULT_PARITY=1
 DEFAULT_THRESHOLD=0
+DEFAULT_WEIGHT=1
 
 FILE_PREFIX=wc
 
 # Get next classifier index from filenames
 classifier_dir=../classifiers/weak
 cd $classifier_dir
-num_files=$(ls | wc -l)
+num_files=$(ls  | wc -l)
 feature_index=$((num_files - 1))
 echo "index="$feature_index
 
@@ -84,3 +85,4 @@ echo "startCol = "$startCol
 echo $feature_type $width $height >> ${FILE_PREFIX}_${feature_index}.txt
 echo $startRow $startCol >> ${FILE_PREFIX}_${feature_index}.txt
 echo $DEFAULT_PARITY $DEFAULT_THRESHOLD >> ${FILE_PREFIX}_${feature_index}.txt
+echo $DEFAULT_WEIGHT >> ${FILE_PREFIX}_${feature_index}.txt

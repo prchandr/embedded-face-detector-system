@@ -13,18 +13,18 @@ elif [ $1 -le 0 ]
 then
 	echo "Error: Argument must be positive. Provided: $1"
 
-elif [ $1 -ge $MAX_FILES ]
+elif [ $1 -gt $MAX_FILES ]
 then
 	echo "Provided argument too high, defaulting to $MAX_FILES"
 	iterations=$MAX_FILES
-
 else
+	echo "Generating $1 features..."
 	iterations=$1
 fi
 
 
 # Run makeRandomFeature.sh the provided number of times
-for ((i = 1; i <= $iterations; i++))
+for ((i = 0; i < $iterations; i++))
 do
 	: $(./makeRandomFeature.sh)
 done

@@ -1,0 +1,91 @@
+#!/usr/bin/env bash
+#
+#
+# e.g. ./runme ../classifiers/weak/ ../classifiers/strong/ ../project-dataset/training/ 100
+
+# Usage: ./runme weakClassifierDir strongClassifierDir trainImagesDir [iterations]
+
+# Variables
+digits=0000
+ARGCOUNT=3
+OPTIONAL_ARGS=1
+DEFAULT_ITERATIONS=5
+WEAK_CLASSIFIER_FILE_PREFIX="wc"
+STRONG_CLASSIFIER_FILE_PREFIX="classifier"
+WEAK_CLASSIFIER_INDEX_FILE="classifierIndices.txt"
+
+RESULT_SUM_DIR="resultSums/"
+
+# Check if arg count is correct
+if [ $# -ne $ARGCOUNT ] && [ $# -ne $(($ARGCOUNT + $OPTIONAL_ARGS)) ] 
+then
+    echo "Error: Incorrect number of arguments. Expected: $ARGCOUNT, Recieved: $#"
+    echo "Usage: ./runme weakClassifierDir strongClassifierDir trainImagesDir [iterations]"
+    exit 1 
+fi
+
+# Directories and files
+WEAK_CLASSIFIERS_DIR=$1
+STRONG_CLASSIFIERS_DIR=$2
+IMAGES_DIR=$3
+ITERATIONS=${4:-$DEFAULT_ITERATIONS}
+CURRENT_DIRECTORY=$(pwd)
+
+# Read in all weak classifiers files
+cd $WEAK_CLASSIFIERS_DIR
+num_weak_classifiers=$(ls ${WEAK_CLASSIFIER_FILE_PREFIX}_*.txt | wc -l) 
+cd $CURRENT_DIRECTORY
+
+: '
+
+# Clear and create directory for result sums, indices
+rm -rf $RESULT_SUM_DIR
+mkdir $RESULT_SUM_DIR
+rm -f $WEAK_CLASSIFIER_INDEX_FILE
+
+echo "Classifying training images in $IMAGES_DIR using each classifier..."
+
+INTERVAL=$((num_weak_classifiers/10))
+
+for ((i = 0; i < $num_weak_classifiers; i++))
+do
+
+    if [ $((i % $INTERVAL)) -eq 0 ]
+    then
+        echo "$i out of $num_weak_classifiers"
+    fi
+
+    echo $i >> $WEAK_CLASSIFIER_INDEX_FILE
+    # Make select file for this classifier
+    echo $i > classifierSelect.txt
+
+    # Rename file to temporary classifier file
+    weak_filename="${WEAK_CLASSIFIERS_DIR}${WEAK_CLASSIFIER_FILE_PREFIX}_${i}.txt" 
+    cp ${weak_filename} ${WEAK_CLASSIFIERS_DIR}${STRONG_CLASSIFIER_FILE_PREFIX}_${i}.txt
+
+    # Perform classification on training images, store resultSum files as face_X.txt, nonface_X.txt
+    : $(./runme_train $WEAK_CLASSIFIERS_DIR classifierSelect.txt ${IMAGES_DIR}face/ results.txt ${RESULT_SUM_DIR}"face_${i}.txt")
+    : $(./runme_train $WEAK_CLASSIFIERS_DIR classifierSelect.txt ${IMAGES_DIR}non-face/ results.txt ${RESULT_SUM_DIR}"nonface_${i}.txt")
+
+    # Remove temporary classifier file
+    rm ${WEAK_CLASSIFIERS_DIR}${STRONG_CLASSIFIER_FILE_PREFIX}_${i}.txt
+done
+
+rm classifierSelect.txt
+'
+# Get filename for strong classifier
+cd $STRONG_CLASSIFIERS_DIR
+num_files=$(ls | wc -l)
+classifier_index=$((num_files - 1))
+cd $CURRENT_DIRECTORY
+
+strong_filename="${STRONG_CLASSIFIERS_DIR}${STRONG_CLASSIFIER_FILE_PREFIX}_${classifier_index}.txt"
+
+echo "Images Classified. Boosting..."
+
+# Call Adaboost training
+./util/efds_train.exe $WEAK_CLASSIFIERS_DIR $WEAK_CLASSIFIER_INDEX_FILE ${RESULT_SUM_DIR} ${strong_filename} $ITERATIONS
+
+echo "Created $strong_filename"
+
+

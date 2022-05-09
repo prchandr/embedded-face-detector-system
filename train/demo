@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+./runme ../classifiers/weak/ ../classifiers/strong/ ../project-dataset/trainingi/ 1
+
