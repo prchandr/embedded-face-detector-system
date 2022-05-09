@@ -1,27 +1,31 @@
-## Getting Dataset
-The images used for training and testing are obtained from a dataset based on the MIT CBCL dataset, found [here](https://github.com/paveyry/FaceDetection/tree/master/learning-tests). 
+## Bash Scripts
 
-Download the images by navigating to the project directory and running the 
-```
-idxupdate project-dataset
-```
-on the DICE command line, or simply running the **`installDataset.sh`** script.
+This directory holds several useful Bash scripts for training classifiers, many of which are self-describing.
 
-## Make Random Features
-To generate a single random feature, run the
-```
-makeRandomFeature.sh
-```
-script on the DICE command line. 
-To generate multiple random features, run the
-```
-generateRandomFeatures.sh
-```
-script on the DICE command line instead.
+### 
 
-## Train Weak Classifiers
-To train the weak classifiers using facial and non-facial data from images, run the
+### Make Random Features
+To generate a single random feature (or Weak Classifier), run 
 ```
-trainWeakClassifier.sh
+./makeRandomFeature.sh
 ```
-script on the DICE command line.
+
+To generate multiple random features, run 
+```
+./generateRandomFeatures.sh [numFeatures]
+```
+This runs the **`makeRandomFeature.sh`** script that many times, creating that many weak classifiers. 
+
+### Clearing Weak Classifiers folder
+To remove all weak classifier files from the weak classifiers directory, run
+```
+./clearWeakClassifiers.sh
+```
+
+### Making new Strong Classifier
+To make a new strong classifier by AdaBoosting a set of weak classifiers using the training images, run 
+```
+./makeStrongClassifier.sh
+```
+
+This clears the weak classifier directory, makes 32 new weak classifiers, trains them on the training images directory, then using boosting, returns a trained strong classifier using 5 of the weak classifiers.

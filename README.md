@@ -1,6 +1,17 @@
 # Embedded-Face-Detector-System
-ENEE408M Capstone: Embedded Face Detector System using Viola-Jones for Raspberry Pi
+## ENEE408M Capstone: Embedded Face Detector System using Viola-Jones for Raspberry Pi
 
+### Getting Dataset of Images
+The images used for training and testing are obtained from a dataset based on the MIT CBCL dataset, found [here](https://github.com/paveyry/FaceDetection/tree/master/learning-tests). 
+
+Download the images by navigating to the project directory and running the 
+```
+idxupdate project-dataset
+```
+on the DICE command line, or simply running the **`installDataset.sh`** script.
+
+
+### About the Algorithm
 The Viola-Jones algorithm is an object-detection framework that allows for the detection of specific image features in real time. There are two main stages in the Viola-Jones algorithm: training and detection.
 
 During the training stage, the machine is being trained to identify Haar-like features. There are three types of Haar-like features that are identified by the Viola-Jones algorithm: edge features, line features, and four-sided features. Since these images have been converted to grayscale, there is a dark side and a light side to each of these features. The two important features for Face Detection, the horizontal and the vertical features, describe the eyebrows and the nose respectively.

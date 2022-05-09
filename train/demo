@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-./runme ../classifiers/weak/ ../classifiers/strong/ ../project-dataset/trainingi/ 1
+./runme ../classifiers/weak/ ../classifiers/strong/ ../project-dataset/training/ 5
 

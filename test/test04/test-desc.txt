@@ -23,8 +23,7 @@ ENHANCEMENTS, OR MODIFICATIONS.
 ----------------------------------------------------------------------------
 
 
-A basic test of the classifier using a single feature and a single image.
-The classifiers are located in the ../../classifiers/strong directory,
-and the images are from the training directory in the project-dataset.
+A test to run the specified strong classifier on the test images and collect
+testing accuracy.
 
 @author Prem Chandrasekhar.

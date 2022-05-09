@@ -27,5 +27,18 @@ A basic test of the classifier using a single feature and a single image.
 These are located within the test case in the classifiers directory
 and the images directory.
 
+classifiers/ is the directory that holds the strong classifier files. The 
+classifier files must be in the appropriate structure and filename.
+
+images/ is the directory that holds the images to classify. The names of
+the images must be a zero-padded integer that fits in XXXX.png.
+
+classifierSelect.txt holds the indices of the classifiers to use in the 
+cascade.
+
+imageSelect.txt holds the integers of the images to classify.
+
+The results of each of these classifications is written to results.txt.
+
 
 @author Prem Chandrasekhar.
