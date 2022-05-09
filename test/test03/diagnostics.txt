@@ -1,4 +1,104 @@
-runme_train: Found 2444 images. Using only the first 100.
+runme_train: Found 1944 images. Using only the first 100.
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
+(24, 24)
 efds_graph_driver.exe: Reading from file: ../../classifiers/strong/classifier_0.txt
 efds_graph_driver.exe: Number of classifiers: 1
 efds_graph_driver.exe: Number of images to classify: 100
@@ -20,8 +120,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -29,7 +129,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -61,8 +161,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -70,7 +170,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -102,8 +202,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -111,7 +211,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -143,8 +243,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -152,7 +252,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -185,8 +285,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -194,7 +294,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -226,8 +326,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -235,7 +335,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -267,8 +367,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -276,7 +376,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -308,8 +408,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -317,7 +417,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -350,8 +450,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -359,7 +459,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -392,8 +492,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -401,7 +501,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -434,8 +534,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -443,7 +543,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -475,8 +575,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -484,7 +584,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -516,8 +616,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -525,7 +625,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -557,8 +657,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -566,7 +666,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -598,8 +698,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -607,7 +707,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -640,8 +740,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -649,7 +749,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -682,8 +782,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -691,7 +791,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -723,8 +823,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -732,7 +832,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -765,8 +865,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -774,7 +874,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -806,8 +906,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -815,7 +915,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -847,8 +947,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -856,7 +956,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -888,8 +988,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -897,7 +997,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -929,8 +1029,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -938,7 +1038,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -971,8 +1071,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -980,7 +1080,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1012,8 +1112,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1021,7 +1121,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1053,8 +1153,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1062,7 +1162,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1095,8 +1195,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1104,7 +1204,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1137,8 +1237,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1146,7 +1246,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1179,8 +1279,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1188,7 +1288,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1220,8 +1320,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1229,7 +1329,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1262,8 +1362,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1271,7 +1371,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1303,8 +1403,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1312,7 +1412,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1344,8 +1444,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1353,7 +1453,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1385,8 +1485,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1394,7 +1494,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1427,8 +1527,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1436,7 +1536,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1468,8 +1568,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1477,7 +1577,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1509,8 +1609,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1518,7 +1618,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1550,8 +1650,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1559,7 +1659,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1591,8 +1691,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1600,7 +1700,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1632,8 +1732,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1641,7 +1741,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1674,8 +1774,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1683,7 +1783,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1715,8 +1815,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1724,7 +1824,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1756,8 +1856,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1765,7 +1865,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1798,8 +1898,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1807,7 +1907,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1840,8 +1940,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1849,7 +1949,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1882,8 +1982,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1891,7 +1991,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1923,8 +2023,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1932,7 +2032,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -1965,8 +2065,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -1974,7 +2074,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2007,8 +2107,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2016,7 +2116,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2048,8 +2148,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2057,7 +2157,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2090,8 +2190,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2099,7 +2199,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2132,8 +2232,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2141,7 +2241,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2173,8 +2273,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2182,7 +2282,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2214,8 +2314,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2223,7 +2323,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2256,8 +2356,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2265,7 +2365,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2298,8 +2398,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2307,7 +2407,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2340,8 +2440,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2349,7 +2449,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2382,8 +2482,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2391,7 +2491,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2424,8 +2524,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2433,7 +2533,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2466,8 +2566,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2475,7 +2575,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2507,8 +2607,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2516,7 +2616,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2548,8 +2648,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2557,7 +2657,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2589,8 +2689,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2598,7 +2698,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2630,8 +2730,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2639,7 +2739,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2671,8 +2771,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2680,7 +2780,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2712,8 +2812,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2721,7 +2821,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2753,8 +2853,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2762,7 +2862,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2794,8 +2894,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2803,7 +2903,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2835,8 +2935,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2844,7 +2944,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2876,8 +2976,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2885,7 +2985,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2917,8 +3017,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2926,7 +3026,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2958,8 +3058,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -2967,7 +3067,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -2999,8 +3099,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3008,7 +3108,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3040,8 +3140,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3049,7 +3149,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3081,8 +3181,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3090,7 +3190,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3122,8 +3222,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3131,7 +3231,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3164,8 +3264,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3173,7 +3273,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3206,8 +3306,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3215,7 +3315,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3248,8 +3348,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3257,7 +3357,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3289,8 +3389,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3298,7 +3398,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3331,8 +3431,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3340,7 +3440,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3373,8 +3473,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3382,7 +3482,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3414,8 +3514,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3423,7 +3523,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3456,8 +3556,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3465,7 +3565,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3498,8 +3598,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3507,7 +3607,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3540,8 +3640,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3549,7 +3649,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3582,8 +3682,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3591,7 +3691,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3624,8 +3724,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3633,7 +3733,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3665,8 +3765,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3674,7 +3774,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3706,8 +3806,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3715,7 +3815,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3747,8 +3847,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3756,7 +3856,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3788,8 +3888,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3797,7 +3897,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3829,8 +3929,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3838,7 +3938,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3870,8 +3970,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3879,7 +3979,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3911,8 +4011,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3920,7 +4020,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3953,8 +4053,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -3962,7 +4062,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -3994,8 +4094,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -4003,7 +4103,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -4035,8 +4135,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -4044,7 +4144,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -4077,8 +4177,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -4086,7 +4186,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
@@ -4118,8 +4218,8 @@ integrateImage::enable() EXIT result: 1
 integrateImage::invoke() ENTER
 integrateImage::integrate() ENTER
 integrateImage::integrate() EXIT
-integrateImage::invoke() integralImageAddress: 0x55ce684d5d08
-integrateImage::invoke() imageAddress: 0x55ce684d5cf0
+integrateImage::invoke() integralImageAddress: 0x55a6d20a5d08
+integrateImage::invoke() imageAddress: 0x55a6d20a5cf0
 integrateImage::invoke() reject: 0 startRow: 0 startCol: 0
 integrateImage::invoke() EXIT
 classifier::enable() ENTER
@@ -4127,7 +4227,7 @@ classifier::enable() CLASSIFIER_MODE_READ
 classifier::enable() EXIT result: 1
 classifier::invoke() ENTER
 classifier::invoke() MODE_READ
-classifier::invoke() imageAddress: 0x55ce684d5cf0
+classifier::invoke() imageAddress: 0x55a6d20a5cf0
 classifier::invoke() reject: 0
 classifier::invoke() EXIT
 classifier::enable() ENTER
