@@ -1,0 +1,10 @@
+1 NF
+2 NF
+3 NF
+4 NF
+5 NF
+6 NF
+7 NF
+8 NF
+9 NF
+10 NF

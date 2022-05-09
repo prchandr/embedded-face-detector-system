@@ -23,14 +23,20 @@
 # ENHANCEMENTS, OR MODIFICATIONS.
 #
 
-ARGCOUNT=4
-OPTIONAL_ARGS=1
+
+# Script to run this test
+# Usage: runme_generic classifiers_dir classifiers_file images_dir images_file output
+
+# Variables
+digits=0000
+ARGCOUNT=5
 
 # Check if arg count is correct
-if [ $# -ne $ARGCOUNT ] && [ $# -ne $(($ARGCOUNT + $OPTIONAL_ARGS)) ]
+
+if [ $# -ne $ARGCOUNT ]
 then
     echo "Error: Incorrect number of arguments. Expected: $ARGCOUNT, Recieved: $#"
-    echo "Usage: ./runme_generic classifiers_dir classifiers_file images_dir images_file."
+    echo "Usage: ./runme_generic classifiers_dir classifiers_file images_dir images_file output."
     exit 1 
 fi
 
@@ -38,33 +44,31 @@ fi
 CLASSIFIER_DIR=$1
 CLASSIFIER_FILE=$2 
 IMAGE_DIRECTORY=$3
-OUTPUT_FILE=$4
+IMAGE_FILE=$4
+OUTPUT_FILE=$5
 CURRENT_DIRECTORY=$(pwd)
-CLASSIFIER_RESULTS=${5-:""}
 
-# Get number of images in the directory
+# Run enee408mim2txt on each image file
+IMAGES=$(cat $IMAGE_FILE)
 cd $IMAGE_DIRECTORY
-num_files=$(ls | wc -l)
+for image in $IMAGES
+do
+    command="enee408mim2txt ${digits:${#image}:${#digits}}${image}.png grayscale"
+    eval $command
+done
 cd $CURRENT_DIRECTORY
 
-# Max files to classify. 
-MAX_FILES=100
+# Delete results file, if it exists
+rm -f $OUTPUT_FILE
 
-if [ $MAX_FILES -le $num_files ]
-then
-	echo "runme_train: Found $num_files images. Using only the first $MAX_FILES."
-	num_files=$MAX_FILES
-else
-	echo "runme_train: Found $num_files images."
-fi
+# Call driver program
+./../util/efds_graph_driver.exe $CLASSIFIER_DIR $CLASSIFIER_FILE $IMAGE_DIRECTORY $IMAGE_FILE $OUTPUT_FILE
 
-# Create imageSelect.txt to include all images in directory
-rm -f imageSelect.txt
-for (( i = 1; i <= $num_files; i++ ))
+# Delete each generated txt file
+IMAGES=$(cat $IMAGE_FILE)
+cd $IMAGE_DIRECTORY
+for image in $IMAGES
 do
-	echo "$i" >> imageSelect.txt
+    rm ${digits:${#image}:${#digits}}${image}.txt
 done
-
-./runme_generic $CLASSIFIER_DIR $CLASSIFIER_FILE $IMAGE_DIRECTORY imageSelect.txt $OUTPUT_FILE $CLASSIFIER_RESULTS
-
-
+cd $CURRENT_DIRECTORY

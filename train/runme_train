@@ -48,7 +48,7 @@ num_files=$(ls | wc -l)
 cd $CURRENT_DIRECTORY
 
 # Max files to classify. 
-MAX_FILES=100
+MAX_FILES=500
 
 if [ $MAX_FILES -le $num_files ]
 then
