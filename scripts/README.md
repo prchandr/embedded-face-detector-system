@@ -29,3 +29,8 @@ To make a new strong classifier by AdaBoosting a set of weak classifiers using t
 ```
 
 This clears the weak classifier directory, makes 32 new weak classifiers, trains them on the training images directory, then using boosting, returns a trained strong classifier using 5 of the weak classifiers.
+
+
+### Making Dataset Partition File
+This simply lists all the files in the project-dataset directory and all subdirectories and stores it in a file. This allows the train/test split to be fully described without needing all the data. The list is stored in doc/dataset-partition.txt.
+

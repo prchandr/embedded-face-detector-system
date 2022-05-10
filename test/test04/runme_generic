@@ -30,13 +30,13 @@
 # Variables
 digits=0000
 ARGCOUNT=5
+OPTIONAL_ARGS=1
 
 # Check if arg count is correct
-
-if [ $# -ne $ARGCOUNT ]
+if [ $# -ne $ARGCOUNT ] && [ $# -ne $(($ARGCOUNT + $OPTIONAL_ARGS)) ] 
 then
     echo "Error: Incorrect number of arguments. Expected: $ARGCOUNT, Recieved: $#"
-    echo "Usage: ./runme_generic classifiers_dir classifiers_file images_dir images_file output."
+    echo "Usage: ./runme_generic classifiers_dir classifiers_file images_dir images_file [classifier_output]."
     exit 1 
 fi
 
@@ -46,29 +46,27 @@ CLASSIFIER_FILE=$2
 IMAGE_DIRECTORY=$3
 IMAGE_FILE=$4
 OUTPUT_FILE=$5
+CLASSIFIER_RESULTS=${6:-""}
 CURRENT_DIRECTORY=$(pwd)
 
-# Run enee408mim2txt on each image file
+# Run enee408mim2txt on each image file, if it doesn't exist
 IMAGES=$(cat $IMAGE_FILE)
 cd $IMAGE_DIRECTORY
 for image in $IMAGES
 do
-    command="enee408mim2txt ${digits:${#image}:${#digits}}${image}.png grayscale"
-    eval $command
+    filename=${digits:${#image}:${#digits}}${image}
+    if [ ! -f "${filename}.txt" ] 
+    then
+        command="enee408mim2txt ${filename}.png grayscale"
+        eval $command
+    fi
 done
 cd $CURRENT_DIRECTORY
 
 # Delete results file, if it exists
 rm -f $OUTPUT_FILE
+rm -f $CLASSIFIER_RESULTS
+
 
 # Call driver program
-./../util/efds_graph_driver.exe $CLASSIFIER_DIR $CLASSIFIER_FILE $IMAGE_DIRECTORY $IMAGE_FILE $OUTPUT_FILE
-
-# Delete each generated txt file
-IMAGES=$(cat $IMAGE_FILE)
-cd $IMAGE_DIRECTORY
-for image in $IMAGES
-do
-    rm ${digits:${#image}:${#digits}}${image}.txt
-done
-cd $CURRENT_DIRECTORY
+./../util/efds_graph_driver.exe $CLASSIFIER_DIR $CLASSIFIER_FILE $IMAGE_DIRECTORY $IMAGE_FILE $OUTPUT_FILE $CLASSIFIER_RESULTS

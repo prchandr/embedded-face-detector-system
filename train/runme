@@ -36,7 +36,6 @@ cd $WEAK_CLASSIFIERS_DIR
 num_weak_classifiers=$(ls ${WEAK_CLASSIFIER_FILE_PREFIX}_*.txt | wc -l) 
 cd $CURRENT_DIRECTORY
 
-: '
 
 # Clear and create directory for result sums, indices
 rm -rf $RESULT_SUM_DIR
@@ -72,7 +71,7 @@ do
 done
 
 rm classifierSelect.txt
-'
+
 # Get filename for strong classifier
 cd $STRONG_CLASSIFIERS_DIR
 num_files=$(ls | wc -l)
@@ -84,7 +83,7 @@ strong_filename="${STRONG_CLASSIFIERS_DIR}${STRONG_CLASSIFIER_FILE_PREFIX}_${cla
 echo "Images Classified. Boosting..."
 
 # Call Adaboost training
-./util/efds_train.exe $WEAK_CLASSIFIERS_DIR $WEAK_CLASSIFIER_INDEX_FILE ${RESULT_SUM_DIR} ${strong_filename} $ITERATIONS
+./util/efds_train.exe $WEAK_CLASSIFIERS_DIR $WEAK_CLASSIFIER_INDEX_FILE ${RESULT_SUM_DIR} ${strong_filename} $ITERATIONS > diagnostics.txt
 
 echo "Created $strong_filename"
 

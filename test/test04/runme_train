@@ -23,14 +23,48 @@
 # ENHANCEMENTS, OR MODIFICATIONS.
 #
 
+ARGCOUNT=4
+OPTIONAL_ARGS=1
+
+# Check if arg count is correct
+if [ $# -ne $ARGCOUNT ] && [ $# -ne $(($ARGCOUNT + $OPTIONAL_ARGS)) ]
+then
+    echo "Error: Incorrect number of arguments. Expected: $ARGCOUNT, Recieved: $#"
+    echo "Usage: ./runme_test classifiers_dir classifiers_file images_dir images_file classifier_results_file."
+    exit 1 
+fi
+
+# Directories and files
+CLASSIFIER_DIR=$1
+CLASSIFIER_FILE=$2 
+IMAGE_DIRECTORY=$3
+OUTPUT_FILE=$4
+CURRENT_DIRECTORY=$(pwd)
+CLASSIFIER_RESULTS=${5-:""}
+
+# Get number of images in the directory
+cd $IMAGE_DIRECTORY
+num_files=$(ls | wc -l)
+cd $CURRENT_DIRECTORY
+
+# Max files to classify. 
+MAX_FILES=100
+
+if [ $MAX_FILES -le $num_files ]
+then
+	echo "runme_test: Found $num_files images. Using only the first $MAX_FILES."
+	num_files=$MAX_FILES
+else
+	echo "runme_test: Found $num_files images."
+fi
+
+# Create imageSelect.txt to include all images in directory
+rm -f imageSelect.txt
+for (( i = 1; i <= $num_files; i++ ))
+do
+	echo "$i" >> imageSelect.txt
+done
+
+./runme_generic $CLASSIFIER_DIR $CLASSIFIER_FILE $IMAGE_DIRECTORY imageSelect.txt $OUTPUT_FILE $CLASSIFIER_RESULTS
 
 
-# Script to build the executable for this test
-# Usage: makeme [no arguments]
-
-# [FIXME: complete this script, this is just a template]
-cd ../../src/
-./makeme
-
-cd ../test/util/
-./makeme

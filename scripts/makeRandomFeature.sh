@@ -24,31 +24,31 @@ echo "featureType="$feature_type
 
 # Get random size, fix as needed
 case $feature_type in
-	0)
+	0) # VERTICAL_EDGE
 		# height must be multiple of 2
 		width=$((RANDOM % (IMAGE_MAX_WIDTH - 1) + 1))
 		height=$((2 * (RANDOM % ((IMAGE_MAX_HEIGHT - 1) / 2) + 1)))
 		;;
 
-	1)
+	1) # HORIZONTAL_EDGE
 		# width must be multiple of 2
 		width=$((2 * (RANDOM % ((IMAGE_MAX_WIDTH - 1) / 2) + 1)))
 		height=$((RANDOM % (IMAGE_MAX_HEIGHT - 1) + 1))
 		;;
 
-	2)
+	2) # VERTICAL_LINE
 		# height must be multiple of 3
 		width=$((RANDOM % (IMAGE_MAX_WIDTH - 1) + 1))
 		height=$((3 * (RANDOM % ((IMAGE_MAX_HEIGHT-1)/3) + 1)))
 		;;
 
-	3)
+	3) # HORIZONTAL_LINE
 		# width must be multiple of 3
 		width=$((3 * (RANDOM % ((IMAGE_MAX_WIDTH - 1) / 3) + 1)))
 		height=$((RANDOM % (IMAGE_MAX_HEIGHT - 1) + 1))
 		;;
 
-	4)
+	4) # FOUR_RECTANGLE
 		# both height and width must be even
 		width=$((2 * (RANDOM % ((IMAGE_MAX_WIDTH - 1) / 2) + 1)))
 		height=$((2 * (RANDOM % ((IMAGE_MAX_HEIGHT - 1) / 2) + 1)))
