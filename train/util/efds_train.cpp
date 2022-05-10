@@ -315,7 +315,7 @@ int main (int argc, char *argv[]) {
 		// Write feature data, threshold, parity, and weight to strong classifier file
 		strongClassifierStream << featureType << " " << width << " " << height << "\n";
 		strongClassifierStream << startRow << " " << startCol << "\n";
-		strongClassifierStream << << trainedPolarities[i] << " " << trainedThresholds[i] << "\n";
+		strongClassifierStream << trainedPolarities[i] << " " << trainedThresholds[i] << "\n";
 		strongClassifierStream << trainedWeights[i] << "\n\n";
 	}
 
