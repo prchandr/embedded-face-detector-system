@@ -51,11 +51,12 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image) {
 					- img[startRow + height/2 - 1][startCol - 1]
 					- img[startRow - 1][startCol + width - 1];
 
-				pos = img[startRow - 1 + height/2 - 1][startCol - 1]
+				pos = img[startRow + height/2 - 1][startCol - 1]
 					+ img[startRow + height - 1][startCol + width - 1]
 					- img[startRow + height - 1][startCol - 1]
 					- img[startRow + height/2 - 1][startCol + width - 1];
-			} else if(startRow == 0 && startCol != 0) {
+			} 
+			else if(startRow == 0 && startCol != 0) {
 				neg = img[startRow+ height/2 - 1][startCol + width - 1]
 					- img[startRow + height/2 - 1][startCol - 1];
 				pos = img[startRow - 1 + height/2 - 1][startCol - 1]
