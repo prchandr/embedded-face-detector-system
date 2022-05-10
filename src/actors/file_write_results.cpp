@@ -44,15 +44,21 @@ void file_write_results::invoke() {
     case FILE_WRITE_PROCESS: {
         cout << TAG << "invoke() FILE_WRITE_PROCESS\n";
         resultCounter++;
-        ImageSubwindow *image;
-        welt_c_fifo_read(this->input_port, &image);
 
-        if (image == nullptr) {
+        ImageSubwindow *integralImage = nullptr;
+        welt_c_fifo_read(this->input_port, &integralImage);
+        
+        if (integralImage == nullptr) {
+            cout << TAG << "invoke() Error: Read in null pointer.\n";
             break;
         }
 
+        this->image = *integralImage;
+
+        cout << TAG << "invoke() imageSubwindow received. reject: " << image.reject << " startRow: " << image.startRow << " starCol: " << image.startRow << "\n";
+
         string result;
-        if (image->reject) {
+        if (this->image.reject) {
             result = "NF";
         } else {
             result = "F";

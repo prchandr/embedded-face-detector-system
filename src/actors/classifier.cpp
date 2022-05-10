@@ -138,7 +138,8 @@ void classifier::invoke() {
     case CLASSIFIER_MODE_CONTINUE: {
         cout << TAG << "invoke() MODE_CONTINUE\n";
         // Write copy of subwindow input to continue
-        welt_c_fifo_write(continue_port, &(this->image));
+        auto ptr_token = &(this->image);
+        welt_c_fifo_write(this->continue_port, &ptr_token);
 
         // Writes classifier results to the file for training/debugging purposes
         if (!this->resultSumFilename.empty()) {

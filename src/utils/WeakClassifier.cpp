@@ -281,9 +281,11 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image) {
 		break;
 	}
 	this->resultSum = pos - neg;
-	cout << TAG << "classifyImage() result: " << this->resultSum << " polarity: " << polarity << " threshold: " << threshold << "\n";
+	bool isFace = (this->polarity * this->resultSum) > (this->polarity * this->threshold);
+
+	cout << TAG << "classifyImage() resultSum: " << this->resultSum << " polarity: " << polarity << " threshold: " << threshold << " isFace: " << isFace << "\n";
 	cout << TAG << "classifyImage() EXIT\n";
-	return (this->polarity * this->resultSum) > (this->polarity * this->threshold);
+	return isFace;
 }
 
 

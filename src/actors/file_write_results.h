@@ -47,6 +47,7 @@ private:
     /* Inner parameters */
     int resultCounter;
     string outputFilename;
+    ImageSubwindow image;
 
     /* FIFO pointers */
     welt_c_fifo_pointer input_port;
