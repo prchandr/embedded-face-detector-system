@@ -79,11 +79,11 @@ vector<float> trainWeakClassifier(vector<int> resultSumsFace, vector<int> result
 
 		// Update values if this is the lowest error so far
 		if (error < minError) {
-			// If there are more faces on the left than on the right -1
-			if (leftNumFace < weightsFace.size() - leftNumFace) {
-				polarity = -1;
-			} else {
+			// If there are more faces on the left than nonfaces
+			if (leftNumFace > leftNumNonFace) {
 				polarity = 1;
+			} else {
+				polarity = -1;
 			}
 			leftPercentFace = (leftNumFace * 1.0) / weightsFace.size();
 			leftPercentNonFace = (leftNumNonFace * 1.0) / weightsNonFace.size();
@@ -258,15 +258,15 @@ int main (int argc, char *argv[]) {
 		beta = lowestError / (1 - lowestError);
 
 		for (int j = 0; j < numFaces; j++) {
-			// If face was classified correctly, adjust weight of image
-			if ((optimalPolarity * resultSums[lowestErrorIdx].first[j] > optimalPolarity * optimalThreshold)) {
+			// If face was classified incorrectly, adjust weight of image
+			if (!(optimalPolarity * resultSums[lowestErrorIdx].first[j] < optimalPolarity * optimalThreshold)) {
 				weightsFace[j] *= beta;
 			}
 		}
 
 		for (int j = 0; j < numNonFaces; j++) {
-			// If nonface was classified correctly, adjust weight of image
-			if (!(optimalPolarity * resultSums[lowestErrorIdx].second[j] > optimalPolarity * optimalThreshold)) {
+			// If nonface was classified incorrectly, adjust weight of image
+			if ((optimalPolarity * resultSums[lowestErrorIdx].second[j] < optimalPolarity * optimalThreshold)) {
 				weightsNonFace[j] *= beta;
 			}
 		}
