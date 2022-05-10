@@ -27,7 +27,23 @@
 # Script to run this test
 # Usage: runme 
 
+if [ $# -eq 1 ]
+then
+	echo $1 > classifierSelect.txt
+fi
+
+
+
 ./runme_train ../../classifiers/strong/ classifierSelect.txt ../../project-dataset/testing/face/ results-face.txt faceOutput.txt > diagnostics.txt
 ./runme_train ../../classifiers/strong/ classifierSelect.txt ../../project-dataset/testing/non-face/ results-nonface.txt nonfaceOutput.txt >> diagnostics.txt
+
+numFacesWrong=$(diff -y --suppress-common-lines results-face.txt correct-faces.txt | wc -l)
+numNonFacesWrong=$(diff -y --suppress-common-lines results-nonface.txt correct-nonfaces.txt | wc -l)
+
+
+echo $numFacesWrong
+echo $numNonFacesWrong
+
+
 
 

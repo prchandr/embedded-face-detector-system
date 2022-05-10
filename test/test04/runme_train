@@ -30,7 +30,7 @@ OPTIONAL_ARGS=1
 if [ $# -ne $ARGCOUNT ] && [ $# -ne $(($ARGCOUNT + $OPTIONAL_ARGS)) ]
 then
     echo "Error: Incorrect number of arguments. Expected: $ARGCOUNT, Recieved: $#"
-    echo "Usage: ./runme_generic classifiers_dir classifiers_file images_dir images_file."
+    echo "Usage: ./runme_test classifiers_dir classifiers_file images_dir images_file classifier_results_file."
     exit 1 
 fi
 
@@ -48,14 +48,14 @@ num_files=$(ls | wc -l)
 cd $CURRENT_DIRECTORY
 
 # Max files to classify. 
-MAX_FILES=1
+MAX_FILES=100
 
 if [ $MAX_FILES -le $num_files ]
 then
-	echo "runme_train: Found $num_files images. Using only the first $MAX_FILES."
+	echo "runme_test: Found $num_files images. Using only the first $MAX_FILES."
 	num_files=$MAX_FILES
 else
-	echo "runme_train: Found $num_files images."
+	echo "runme_test: Found $num_files images."
 fi
 
 # Create imageSelect.txt to include all images in directory
