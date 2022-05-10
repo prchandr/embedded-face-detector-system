@@ -138,7 +138,7 @@ bool WeakClassifier::classifyImage(ImageSubwindow integral_image) {
 			      - img[startRow + height / 3 - 1][startCol - 1]			// UMidLeft
 			      + img[startRow + 2 * height / 3 - 1][startCol - 1]		// LMidLeft
 			      + img[startRow + height - 1][startCol + width - 1]		// BotRight
-			      - img[startRow + height / 3 - 1][startCol - 1]			// UMidLeft
+			      - img[startRow + 2 * height / 3 - 1][startCol + width - 1]// LMidRight
 			      - img[startRow + height - 1][startCol - 1];				// BotLeft
 
 			pos = img[startRow + height / 3 - 1][startCol - 1]				// UMidLeft
