@@ -21,17 +21,17 @@ bool file_write_results::enable() {
     cout << TAG << "enable() ENTER\n";
     bool result = false;
     switch (mode) {
-        case FILE_WRITE_PROCESS:
-            result = (welt_c_fifo_population(input_port) > 0);
-            break;
+    case FILE_WRITE_PROCESS:
+        result = (welt_c_fifo_population(input_port) > 0);
+        break;
 
-        case FILE_WRITE_ERROR:
-            result = false;
-            break;
+    case FILE_WRITE_ERROR:
+        result = false;
+        break;
 
-        default:
-            result = false;
-            break;
+    default:
+        result = false;
+        break;
     }
 
     cout << TAG << "enable() EXIT result: " << result << "\n";
@@ -41,48 +41,50 @@ bool file_write_results::enable() {
 void file_write_results::invoke() {
     cout << TAG << "invoke() ENTER\n";
     switch (mode) {
-        case FILE_WRITE_PROCESS: {
-            cout << TAG << "invoke() FILE_WRITE_PROCESS\n";
-            resultCounter++;
-            ImageSubwindow *image;
-    	    welt_c_fifo_read(this->input_port, &image);
+    case FILE_WRITE_PROCESS: {
+        cout << TAG << "invoke() FILE_WRITE_PROCESS\n";
+        resultCounter++;
+        ImageSubwindow *image;
+        welt_c_fifo_read(this->input_port, &image);
 
-            if (image == nullptr) {
-                break;
-            }
-
-            string result;
-    	    if (image->reject){
-                result = "NF";
-            } else {
-                result = "F";
-            }
-
-            // Open stream and append results
-            ofstream outStream;
-            outStream.open(this->outputFilename, ofstream::app);
-
-            if (!outStream.is_open()) {
-                cerr << "Error: Unable to open output file: " << this->outputFilename << "\n";
-                mode = FILE_WRITE_ERROR;
-                break;
-            }
-
-    	    outStream << resultCounter << " " << result << "\n";
-            outStream.close();
+        if (image == nullptr) {
             break;
         }
 
-        case FILE_WRITE_ERROR: {
-            cout << TAG << "invoke() FILE_WRITE_ERRO\n";
-            /* Remain in the same mode, do nothing */
+        string result;
+        if (image->reject) {
+            result = "NF";
+        } else {
+            result = "F";
+        }
+
+        cout << TAG << "invoke() Writing: " << result << " to " << outputFilename << "\n";
+
+        // Open stream and append results
+        ofstream outStream;
+        outStream.open(this->outputFilename, ofstream::app);
+
+        if (!outStream.is_open()) {
+            cerr << "Error: Unable to open output file: " << this->outputFilename << "\n";
             mode = FILE_WRITE_ERROR;
             break;
         }
 
-        default:
-            mode = FILE_WRITE_ERROR;
-            break;
+        outStream << resultCounter << " " << result << "\n";
+        outStream.close();
+        break;
+    }
+
+    case FILE_WRITE_ERROR: {
+        cout << TAG << "invoke() FILE_WRITE_ERROR\n";
+        /* Remain in the same mode, do nothing */
+        mode = FILE_WRITE_ERROR;
+        break;
+    }
+
+    default:
+        mode = FILE_WRITE_ERROR;
+        break;
     }
     cout << TAG << "invoke() EXIT\n";
 }
