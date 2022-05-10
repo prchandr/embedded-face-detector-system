@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-gdb --args ./../util/efds_graph_driver.exe ../../classifiers/strong/ ../test02/classifierSelect.txt ../../project-dataset/training/face/ ../test02/imageSelect.txt ../test02/results.txt

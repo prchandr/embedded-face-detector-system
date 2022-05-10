@@ -13,7 +13,7 @@ using namespace std;
 
 // Function to compare pairs of classifications for sorting. 
 bool compareClassifications(pair<bool, pair<float, int>>  &lhs, pair<bool, pair<float, int>>  &rhs) {
-	return lhs.second.second > rhs.second.second;
+	return lhs.second.second < rhs.second.second;
 }
 
 /*
@@ -79,8 +79,8 @@ vector<float> trainWeakClassifier(vector<int> resultSumsFace, vector<int> result
 
 		// Update values if this is the lowest error so far
 		if (error < minError) {
-			// If there are more faces than nonfaces to the left of this threshold, set the polarity to -1
-			if (leftNumFace < leftNumNonFace) {
+			// If there are more faces on the left than on the right -1
+			if (leftNumFace < weightsFace.size() - leftNumFace) {
 				polarity = -1;
 			} else {
 				polarity = 1;
@@ -90,6 +90,11 @@ vector<float> trainWeakClassifier(vector<int> resultSumsFace, vector<int> result
 			optimalThreshold = classifications[i].second.second;
 			minError = error;
 		}
+	}
+
+	// Make error non-zero
+	if (minError == 0) {
+		minError = 0.0001;
 	}
 
 	cout << TAG << "trainWeakClassifier() leftPercentFace: " << leftPercentFace << " leftPercentNonFace: " << leftPercentNonFace << "\n"; 
@@ -254,14 +259,14 @@ int main (int argc, char *argv[]) {
 
 		for (int j = 0; j < numFaces; j++) {
 			// If face was classified correctly, adjust weight of image
-			if (optimalPolarity * resultSums[lowestErrorIdx].first[j] >= optimalPolarity * optimalThreshold) {
+			if ((optimalPolarity * resultSums[lowestErrorIdx].first[j] > optimalPolarity * optimalThreshold)) {
 				weightsFace[j] *= beta;
 			}
 		}
 
 		for (int j = 0; j < numNonFaces; j++) {
 			// If nonface was classified correctly, adjust weight of image
-			if (optimalPolarity * resultSums[lowestErrorIdx].second[j] < optimalPolarity * optimalThreshold) {
+			if (!(optimalPolarity * resultSums[lowestErrorIdx].second[j] > optimalPolarity * optimalThreshold)) {
 				weightsNonFace[j] *= beta;
 			}
 		}
@@ -310,7 +315,7 @@ int main (int argc, char *argv[]) {
 		// Write feature data, threshold, parity, and weight to strong classifier file
 		strongClassifierStream << featureType << " " << width << " " << height << "\n";
 		strongClassifierStream << startRow << " " << startCol << "\n";
-		strongClassifierStream << trainedThresholds[i] << " " << trainedPolarities[i] << "\n";
+		strongClassifierStream << << trainedPolarities[i] << " " << trainedThresholds[i] << "\n";
 		strongClassifierStream << trainedWeights[i] << "\n\n";
 	}
 

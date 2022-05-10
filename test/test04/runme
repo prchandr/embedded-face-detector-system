@@ -25,8 +25,9 @@
 
 
 # Script to run this test
-# Usage: runme classifiers_dir classifiers_file images_dir images_file output
+# Usage: runme 
 
-./runme_generic ../../classifiers/strong/ classifierSelect.txt ../../project-dataset/testing/face/ imageSelect.txt results-face.txt > diagnostics.txt
-./runme_generic ../../classifiers/strong/ classifierSelect.txt ../../project-dataset/testing/non-face/ imageSelect.txt results-nonface.txt >> diagnostics.txt
+./runme_train ../../classifiers/strong/ classifierSelect.txt ../../project-dataset/testing/face/ results-face.txt faceOutput.txt > diagnostics.txt
+./runme_train ../../classifiers/strong/ classifierSelect.txt ../../project-dataset/testing/non-face/ results-nonface.txt nonfaceOutput.txt >> diagnostics.txt
+
 
