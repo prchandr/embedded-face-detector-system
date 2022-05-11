@@ -24,6 +24,8 @@ ENHANCEMENTS, OR MODIFICATIONS.
 
 
 A test to run the specified strong classifier on the test images and collect
-testing accuracy.
+testing performance metrics.
+
+To collect testing metrics on a specific classifier, modify the classifierSelect.txt file, or pass the classifier index as an argument to ./runme.
 
 @author Prem Chandrasekhar.
