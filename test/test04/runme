@@ -27,22 +27,37 @@
 # Script to run this test
 # Usage: runme 
 
+
+NUM_TEST_FACES=485
+NUM_TEST_NONFACES=909
+
+
 if [ $# -eq 1 ]
 then
 	echo $1 > classifierSelect.txt
 fi
 
-
 ./runme_test ../../classifiers/strong/ classifierSelect.txt ../../project-dataset/testing/face/ results-face.txt faceOutput.txt > diagnostics.txt
 ./runme_test ../../classifiers/strong/ classifierSelect.txt ../../project-dataset/testing/non-face/ results-nonface.txt nonfaceOutput.txt >> diagnostics.txt
 
-numFacesWrong=$(diff -y --suppress-common-lines results-face.txt correct-faces.txt | wc -l)
-numNonFacesWrong=$(diff -y --suppress-common-lines results-nonface.txt correct-nonfaces.txt | wc -l)
+falseNegatives=$(diff -y --suppress-common-lines results-face.txt correct-faces.txt | wc -l)
+falsePositives=$(diff -y --suppress-common-lines results-nonface.txt correct-nonfaces.txt | wc -l)
 
-echo "False Negatives: $numFacesWrong"
-echo "False Positives: $numNonFacesWrong"
+truePositives=$(( $NUM_TEST_FACES - $falseNegatives ))
+trueNegatives=$(( $NUM_TEST_NONFACES - $falsePositives ))
 
-precision=num
+echo
+echo "Results for "
+cat classifierSelect.txt
+echo
+echo
+echo "==== Performance Metrics ===="
+echo "# Faces: $NUM_TEST_FACES, # NonFaces: $NUM_TEST_NONFACES"
+echo "TP: $truePositives,  FN: $falseNegatives"
+echo "FP: $falsePositives,  TN: $trueNegatives"
+echo
+echo
+
 
 
 

@@ -69,12 +69,4 @@ rm -f $CLASSIFIER_RESULTS
 # Call driver program
 ./../util/efds_graph_driver.exe $CLASSIFIER_DIR $CLASSIFIER_FILE $IMAGE_DIRECTORY $IMAGE_FILE $OUTPUT_FILE $CLASSIFIER_RESULTS
 
-# Do not delete the generated files, saves time on following iterations.
-# IMAGES=$(cat $IMAGE_FILE)
-# cd $IMAGE_DIRECTORY
-# for image in $IMAGES
-# do
-#     rm ${digits:${#image}:${#digits}}${image}.txt
-# done
-# cd $CURRENT_DIRECTORY
 

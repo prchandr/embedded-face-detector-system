@@ -27,5 +27,5 @@
 # Script to run this test
 # Usage: runme
 
-./runme_train ../../classifiers/strong/ ../test03/classifierSelect.txt ../../project-dataset/training/face/ ../test03/results.txt ../test03/classifierOutput.txt > diagnostics.txt
+./runme_train ../../classifiers/strong/ ../test03/classifierSelect.txt ../../project-dataset/training/non-face/ ../test03/results.txt ../test03/classifierOutput.txt > diagnostics.txt
 diff results.txt expected-output.txt
