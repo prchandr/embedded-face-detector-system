@@ -36,7 +36,7 @@ The last two classifiers were trained from 1024 weak classifiers on all the trai
 classifier_0.txt
 
 ==== Performance Metrics ====
-# Faces: 485, # NonFaces: 909
+Faces: 485, NonFaces: 909
 TP: 447,  FN: 38
 FP: 578,  TN: 331
 
@@ -48,7 +48,7 @@ F = 0.5920529801324503
 classifier_1.txt
 
 ==== Performance Metrics ====
-# Faces: 485, # NonFaces: 909
+Faces: 485, NonFaces: 909
 TP: 336,  FN: 149
 FP: 85,  TN: 824
 
@@ -60,7 +60,7 @@ F = 0.7417218543046358
 classifier_2.txt
 
 ==== Performance Metrics ====
-# Faces: 485, # NonFaces: 909
+Faces: 485, NonFaces: 909
 TP: 453,  FN: 32
 FP: 294,  TN: 615
 
@@ -72,7 +72,7 @@ F = 0.7353896103896105
 classifier_3.txt
 
 ==== Performance Metrics ====
-# Faces: 485, # NonFaces: 909
+Faces: 485, NonFaces: 909
 TP: 346,  FN: 139
 FP: 268,  TN: 641
 
@@ -84,7 +84,7 @@ F = 0.6296633303002731
 classifier_4.txt
 
 ==== Performance Metrics ====
-# Faces: 485, # NonFaces: 909
+Faces: 485, NonFaces: 909
 TP: 421,  FN: 64
 FP: 251,  TN: 658
 
@@ -97,7 +97,7 @@ F = 0.7277441659464131
 1->4->2
 
 ==== Performance Metrics ====
-# Faces: 485, # NonFaces: 909
+Faces: 485, NonFaces: 909
 TP: 325,  FN: 160
 FP: 45,  TN: 864
 
