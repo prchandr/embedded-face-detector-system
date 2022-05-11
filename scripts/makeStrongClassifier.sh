@@ -9,6 +9,6 @@ echo "Weak Classifiers erased..."
 echo "New Weak Classifiers generated!"
 
 cd ../train
-./demo
+./train
 
 echo "Done training! New Strong Classifier made."
