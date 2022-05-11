@@ -27,10 +27,11 @@
 #
 # @ddblock_end copyright
 ################################################################################
-
+enee408m_makeme
+: '
 rm -rf build
 mkdir build
 cd build
 cmake ..
 make install
-
+'

@@ -43,6 +43,7 @@ wc_*.txt
 
 # Build directories
 **/build/
+**/build-raspi/
 **/Debug/
 
 # Diagnostic files
