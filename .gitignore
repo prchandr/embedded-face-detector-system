@@ -55,3 +55,4 @@ train/classifierSelect.txt
 train/classifierIndices.txt
 train/resultSums/
 
+train/diagnostic_runme.txt
